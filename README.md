@@ -1,130 +1,94 @@
-<!-- ===================== BANNER ===================== -->
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:040607,100:BF40FA&height=220&section=header&text=Lorenzo%20Orsetti&fontSize=52&fontColor=ffffff&fontAlignY=38&desc=Software%20Engineer%20%E2%80%A2%20Paran%C3%A1%20-%20Brasil&descAlignY=58&descSize=18" width="100%" alt="Banner" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:040607,100:BF40FA&height=180&section=header&text=Iguana%20Emp%C3%B3rio%20Pet&fontSize=46&fontColor=ffffff&fontAlignY=38&desc=Site%20demonstrativo%20%E2%80%A2%20Pet%20shop%2C%20banho%20%26%20tosa&descAlignY=60&descSize=16" width="100%" alt="Iguana Empório Pet" />
 </p>
-
-<p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=20&duration=3500&pause=800&color=BF40FA&center=true&vCenter=true&width=520&lines=Ol%C3%A1!+Eu+sou+o+Lorenzo+%F0%9F%91%8B;Desenvolvedor+Web+Full+Stack;JavaScript+%E2%80%A2+Python+%E2%80%A2+PHP+%E2%80%A2+MySQL" alt="Typing SVG" />
-</p>
-
-<!-- ===================== CONTATOS ===================== -->
-<p align="center">
-  <a href="https://lorenzo-or7.github.io">
-    <img src="https://img.shields.io/badge/Portf%C3%B3lio-BF40FA?style=for-the-badge&logo=googlechrome&logoColor=040607" alt="Portfólio" />
-  </a>
-  <a href="https://www.linkedin.com/in/lorenzo-orsetti-031906349/">
-    <img src="https://img.shields.io/badge/LinkedIn-040607?style=for-the-badge&logo=linkedin&logoColor=BF40FA" alt="LinkedIn" />
-  </a>
-  <a href="https://www.instagram.com/lorenzo.or7/">
-    <img src="https://img.shields.io/badge/Instagram-040607?style=for-the-badge&logo=instagram&logoColor=BF40FA" alt="Instagram" />
-  </a>
-  <a href="mailto:lmorsetti@gmail.com">
-    <img src="https://img.shields.io/badge/Gmail-BF40FA?style=for-the-badge&logo=gmail&logoColor=040607" alt="Gmail" />
-  </a>
-</p>
-
----
-
-<!-- ===================== SOBRE MIM ===================== -->
-<h2 align="center">🟣 Sobre mim</h2>
-
-<p align="center">
-  Sou <b>Lorenzo Orsetti</b>, desenvolvedor de software do Paraná, Brasil. Crio sites e sistemas web
-  para negócios locais e projetos de impacto social, cuidando do front-end ao banco de dados.
-  Hoje trabalho principalmente com <b>JavaScript, Python, PHP e MySQL</b>, e estou sempre
-  aprendendo algo novo para entregar aplicações mais rápidas, bonitas e úteis.
-</p>
-
-<p align="center">
-  🔭 Trabalhando no <b>VotAI</b> &nbsp;•&nbsp; 🌱 Aprendendo coisas novas todo dia &nbsp;•&nbsp; 💬 Pode me chamar para projetos freelance
-</p>
-
----
-
-<!-- ===================== TECNOLOGIAS ===================== -->
-<h2 align="center">🟣 Tecnologias</h2>
 
 <p align="center">
   <img src="https://img.shields.io/badge/HTML5-040607?style=for-the-badge&logo=html5&logoColor=BF40FA" />
   <img src="https://img.shields.io/badge/CSS3-040607?style=for-the-badge&logo=css&logoColor=BF40FA" />
   <img src="https://img.shields.io/badge/JavaScript-040607?style=for-the-badge&logo=javascript&logoColor=BF40FA" />
-  <img src="https://img.shields.io/badge/Python-040607?style=for-the-badge&logo=python&logoColor=BF40FA" />
-  <img src="https://img.shields.io/badge/PHP-040607?style=for-the-badge&logo=php&logoColor=BF40FA" />
-  <br/>
-  <img src="https://img.shields.io/badge/MySQL-040607?style=for-the-badge&logo=mysql&logoColor=BF40FA" />
-  <img src="https://img.shields.io/badge/Git-040607?style=for-the-badge&logo=git&logoColor=BF40FA" />
-  <img src="https://img.shields.io/badge/GitHub-040607?style=for-the-badge&logo=github&logoColor=BF40FA" />
-  <img src="https://img.shields.io/badge/VS%20Code-040607?style=for-the-badge&logo=vscodium&logoColor=BF40FA" />
-  <img src="https://img.shields.io/badge/Figma-040607?style=for-the-badge&logo=figma&logoColor=BF40FA" />
+  <img src="https://img.shields.io/badge/GitHub%20Pages-040607?style=for-the-badge&logo=githubpages&logoColor=BF40FA" />
+</p>
+
+<p align="center">
+  Demo de site próprio para um pet shop real de Curitiba, criada para ser apresentada ao
+  estabelecimento e mostrar como a marca poderia ter uma presença digital mais moderna e profissional.
+</p>
+
+<p align="center">
+  <a href="https://lorenzo-or7.github.io/iguana-emporio-pet-demo/"><b>🔗 Acessar o site</b></a>
 </p>
 
 ---
 
-<!-- ===================== PROJETOS ===================== -->
-<h2 align="center">🟣 Projetos</h2>
-
-<!-- Troque os links "#" pelos repositórios ou sites publicados de cada projeto -->
-<table align="center">
-  <tr>
-    <td width="50%" valign="top">
-      <h3>🗳️ <a href="https://github.com/lorenzo-or7/VotAI">VotAI</a></h3>
-      <p>Plataforma de consulta e comparação de candidatos e propostas eleitorais usando dados públicos do TSE, ajudando o eleitor a votar com mais informação.</p>
-      <img src="https://img.shields.io/badge/PHP-040607?style=flat-square&logo=php&logoColor=BF40FA" />
-      <img src="https://img.shields.io/badge/MySQL-040607?style=flat-square&logo=mysql&logoColor=BF40FA" />
-      <img src="https://img.shields.io/badge/Dados%20Abertos-TSE-BF40FA?style=flat-square&labelColor=040607" />
-    </td>
-    <td width="50%" valign="top">
-      <h3>🦎 <a href="https://lorenzo-or7.github.io/iguana-emporio-pet-demo/">Iguana Empório Pet</a></h3>
-      <p>Site para pet shop de Curitiba com produtos, banho e tosa, delivery, cashback e tema claro/escuro.</p>
-      <img src="https://img.shields.io/badge/HTML5-040607?style=flat-square&logo=html5&logoColor=BF40FA" />
-      <img src="https://img.shields.io/badge/CSS3-040607?style=flat-square&logo=css&logoColor=BF40FA" />
-      <img src="https://img.shields.io/badge/JavaScript-040607?style=flat-square&logo=javascript&logoColor=BF40FA" />
-    </td>
-  </tr>
-  <tr>
-    <td width="50%" valign="top">
-      <h3>✨ <a href="#">Casa di Lucente</a></h3>
-      <p>Site institucional com apresentação da marca, catálogo e canais de atendimento, com visual elegante e responsivo.</p>
-      <img src="https://img.shields.io/badge/HTML5-040607?style=flat-square&logo=html5&logoColor=BF40FA" />
-      <img src="https://img.shields.io/badge/CSS3-040607?style=flat-square&logo=css&logoColor=BF40FA" />
-      <img src="https://img.shields.io/badge/JavaScript-040607?style=flat-square&logo=javascript&logoColor=BF40FA" />
-    </td>
-    <td width="50%" valign="top">
-      <h3>💈 <a href="https://lorenzo-or7.github.io/barbearia-chapula-demo/">Barbearia Chapula</a></h3>
-      <p>Site para barbearia com serviços, preços, localização e agendamento rápido pelo WhatsApp.</p>
-      <img src="https://img.shields.io/badge/HTML5-040607?style=flat-square&logo=html5&logoColor=BF40FA" />
-      <img src="https://img.shields.io/badge/CSS3-040607?style=flat-square&logo=css&logoColor=BF40FA" />
-      <img src="https://img.shields.io/badge/JavaScript-040607?style=flat-square&logo=javascript&logoColor=BF40FA" />
-    </td>
-  </tr>
-  <tr>
-    <td width="50%" valign="top">
-      <h3>🍎 <a href="#">Maçã Padaria</a></h3>
-      <p>Site para padaria com cardápio, horários de funcionamento e canais de pedido.</p>
-      <img src="https://img.shields.io/badge/HTML5-040607?style=flat-square&logo=html5&logoColor=BF40FA" />
-      <img src="https://img.shields.io/badge/CSS3-040607?style=flat-square&logo=css&logoColor=BF40FA" />
-      <img src="https://img.shields.io/badge/JavaScript-040607?style=flat-square&logo=javascript&logoColor=BF40FA" />
-    </td>
-    <td width="50%" valign="top" align="center">
-      <h3>🚀 Em breve</h3>
-      <p>Novos projetos a caminho. Fique de olho!</p>
-    </td>
-  </tr>
-</table>
-
----
-
-<!-- ===================== ESTATÍSTICAS ===================== -->
-<h2 align="center">🟣 Estatísticas</h2>
+## 🖥️ Preview
 
 <p align="center">
-  <img src="https://streak-stats.demolab.com?user=lorenzo-or7&background=040607&ring=BF40FA&fire=BF40FA&currStreakLabel=BF40FA&sideLabels=ffffff&currStreakNum=ffffff&sideNums=ffffff&dates=9a9a9a&stroke=BF40FA&hide_border=true&locale=pt_BR" height="170" alt="Streak" />
+  <img src="preview.webp" alt="Página inicial do Iguana Empório Pet" width="90%" />
 </p>
 
 ---
 
-<!-- ===================== RODAPÉ ===================== -->
+## 📌 Sobre o projeto
+
+O pet shop não tinha um site próprio que reunisse produtos, serviços, lojas e contatos em um só lugar,
+com a cara da marca. A proposta foi criar uma demonstração visual para oferecer ao estabelecimento,
+mostrando o potencial de um site feito sob medida.
+
+A identidade partiu das cores da própria Iguana: **verde** como cor principal e **laranja** como destaque,
+com formas arredondadas e um visual amigável, moderno e acolhedor, sem parecer um template genérico de pet shop.
+
+---
+
+## ✨ Funcionalidades
+
+- 🏠 Página inicial com os diferenciais da loja
+- 🛍️ Principais produtos e categorias
+- 🛁 Área dedicada ao banho e tosa
+- 🛵 Horários de delivery e programa de cashback
+- ⭐ Avaliações de clientes
+- 📍 Sobre a empresa e localização das lojas
+- 📲 Integração com WhatsApp, Instagram e mapa
+- 🌗 Tema claro e escuro, com animações suaves
+- 📱 Interface responsiva
+
+---
+
+## 🛠️ Tecnologias
+
+- **HTML5** para a estrutura
+- **CSS3** para a identidade visual e a responsividade
+- **JavaScript** para interações, animações, troca de tema e menus
+- **GitHub Pages** para hospedagem
+
+---
+
+## ⚙️ Como rodar
+
+Não precisa instalar nada: baixe o repositório e abra o arquivo `index.html` no navegador.
+
+```bash
+git clone https://github.com/lorenzo-or7/iguana-emporio-pet-demo.git
+```
+
+> Este é um projeto demonstrativo: não possui backend, banco de dados nem sistemas reais de compra e agendamento.
+
+---
+
+## 👨‍💻 Autor
+
+<p>
+  Feito por <b>Lorenzo Orsetti</b><br/>
+  <a href="https://lorenzo-or7.github.io">
+    <img src="https://img.shields.io/badge/Portf%C3%B3lio-BF40FA?style=for-the-badge&logo=googlechrome&logoColor=040607" />
+  </a>
+  <a href="https://www.linkedin.com/in/lorenzo-orsetti-031906349/">
+    <img src="https://img.shields.io/badge/LinkedIn-040607?style=for-the-badge&logo=linkedin&logoColor=BF40FA" />
+  </a>
+  <a href="https://github.com/lorenzo-or7">
+    <img src="https://img.shields.io/badge/GitHub-040607?style=for-the-badge&logo=github&logoColor=BF40FA" />
+  </a>
+</p>
 
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:BF40FA,100:040607&height=120&section=footer" width="100%" alt="Footer" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:BF40FA,100:040607&height=100&section=footer" width="100%" />
 </p>
