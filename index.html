@@ -1,0 +1,2129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Iguana Empório Pet | Pet Shop em Curitiba</title>
+  <meta name="description" content="Produtos, banho e tosa, acessórios e muito carinho para seu pet. Conheça a Iguana Empório Pet em Curitiba.">
+  <meta name="theme-color" content="#FBF8F1">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+
+  <!-- Aplica o tema salvo antes da renderização (evita "piscar") -->
+  <script>
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem('iguana-theme'); } catch (e) {}
+      if (!t) t = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+      document.documentElement.classList.add('js');
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500..800;1,9..144,500..700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* =========================================================
+       TOKENS
+       ========================================================= */
+    :root {
+      --green: #60B232;
+      --green-ink: #4A8F24;
+      --green-deep: #1C3A1F;
+      --green-tint: #EAF3DF;
+      --orange: #EA691C;
+      --orange-ink: #C9540F;
+      --orange-tint: #FCEADC;
+
+      --bg: #FBF8F1;
+      --bg-alt: #F3EEE2;
+      --surface: #FFFFFF;
+      --surface-2: #F7F4EC;
+      --cream: #F6EFDD;
+      --text: #16301B;
+      --text-soft: #46594A;
+      --muted: #7B8A7E;
+      --line: rgba(22, 48, 27, .09);
+      --line-strong: rgba(22, 48, 27, .16);
+      --on-green: #0F2410;
+
+      --shadow-sm: 0 1px 2px rgba(22, 48, 27, .05), 0 4px 14px rgba(22, 48, 27, .05);
+      --shadow-md: 0 2px 6px rgba(22, 48, 27, .05), 0 14px 36px rgba(22, 48, 27, .09);
+      --shadow-lg: 0 24px 60px rgba(22, 48, 27, .14);
+
+      --footer-bg: #13261A;
+      --img-filter: none;
+
+      --radius-sm: 12px;
+      --radius: 20px;
+      --radius-lg: 32px;
+      --radius-xl: 44px;
+
+      --font-display: "Fraunces", Georgia, serif;
+      --font-body: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+      --container: 1240px;
+      --gutter: 24px;
+      --header-h: 76px;
+      --ease: cubic-bezier(.22, .61, .36, 1);
+    }
+
+    :root[data-theme="dark"] {
+      --green: #60B232;
+      --green-ink: #86CF5A;
+      --green-deep: #0C1A0F;
+      --green-tint: rgba(96, 178, 50, .13);
+      --orange: #EA691C;
+      --orange-ink: #F28A4A;
+      --orange-tint: rgba(234, 105, 28, .15);
+
+      --bg: #0D1510;
+      --bg-alt: #111C14;
+      --surface: #17231A;
+      --surface-2: #1D2B20;
+      --cream: #1F2B1F;
+      --text: #EFECE2;
+      --text-soft: #BCC5B8;
+      --muted: #8D998C;
+      --line: rgba(239, 236, 226, .08);
+      --line-strong: rgba(239, 236, 226, .15);
+
+      --shadow-sm: 0 1px 2px rgba(0, 0, 0, .3), 0 4px 14px rgba(0, 0, 0, .22);
+      --shadow-md: 0 2px 6px rgba(0, 0, 0, .3), 0 14px 36px rgba(0, 0, 0, .35);
+      --shadow-lg: 0 24px 60px rgba(0, 0, 0, .45);
+
+      --footer-bg: #08100A;
+      --img-filter: brightness(.92) saturate(.95);
+    }
+
+    /* =========================================================
+       BASE
+       ========================================================= */
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+      overflow-x: clip;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; color: inherit; cursor: pointer; border: 0; background: none; padding: 0; }
+    h1, h2, h3, h4 { margin: 0; font-family: var(--font-display); font-weight: 650; line-height: 1.08; letter-spacing: -.02em; font-variation-settings: "opsz" 96; }
+    p { margin: 0; }
+    ul { margin: 0; padding: 0; list-style: none; }
+    :focus-visible { outline: 3px solid var(--orange); outline-offset: 3px; border-radius: 8px; }
+    ::selection { background: var(--green); color: var(--on-green); }
+
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+    .container { width: 100%; max-width: var(--container); margin-inline: auto; padding-inline: var(--gutter); }
+    section { position: relative; scroll-margin-top: 100px; }
+
+    .theme-anim, .theme-anim *, .theme-anim *::before, .theme-anim *::after {
+      transition: background-color .45s var(--ease), color .45s var(--ease), border-color .45s var(--ease), box-shadow .45s var(--ease), fill .45s var(--ease), stroke .45s var(--ease) !important;
+    }
+
+    svg.lucide { width: 1em; height: 1em; stroke-width: 1.8; flex-shrink: 0; }
+    .ic { width: 1em; height: 1em; flex-shrink: 0; fill: currentColor; }
+
+    /* Moldura de foto: fundo da marca aparece caso a imagem não carregue */
+    .ph {
+      position: relative;
+      overflow: hidden;
+      background-color: var(--green-tint);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2360B232' fill-opacity='.35'%3E%3Cellipse cx='6' cy='9.5' rx='2.2' ry='2.8'/%3E%3Cellipse cx='10' cy='5.5' rx='2.2' ry='2.9'/%3E%3Cellipse cx='14' cy='5.5' rx='2.2' ry='2.9'/%3E%3Cellipse cx='18' cy='9.5' rx='2.2' ry='2.8'/%3E%3Cpath d='M12 11c-3 0-6 3.6-6 6.3 0 1.8 1.4 2.7 3 2.7 1.2 0 2-.6 3-.6s1.8.6 3 .6c1.6 0 3-.9 3-2.7C18 14.6 15 11 12 11z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 22%;
+    }
+    :root[data-theme="dark"] .ph { background-color: #1A2A1D; }
+    .ph video { display: block; width: 100%; height: 100%; object-fit: cover; filter: var(--img-filter); }
+    .ph img { width: 100%; height: 100%; object-fit: cover; filter: var(--img-filter); transition: transform .5s var(--ease), opacity .3s; }
+
+    /* =========================================================
+       TIPOGRAFIA / ELEMENTOS COMUNS
+       ========================================================= */
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: .78rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+      color: var(--green-ink);
+    }
+    .eyebrow .ic { width: 14px; height: 14px; color: var(--orange); }
+
+    .section-head { max-width: 640px; margin-bottom: 44px; }
+    .section-head h2 { font-size: clamp(2rem, 1.3rem + 2.4vw, 3.3rem); margin-top: 14px; }
+    .section-head p { margin-top: 14px; font-size: 1.08rem; color: var(--text-soft); }
+    .section-head--row { max-width: none; display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; }
+    .section-head--row > div { max-width: 620px; }
+
+    .italic-accent { font-style: italic; font-weight: 550; color: var(--green-ink); }
+
+    .btn {
+      --btn-bg: var(--green); --btn-fg: var(--on-green);
+      position: relative;
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      min-height: 52px; padding: 0 26px;
+      border-radius: 999px;
+      background: var(--btn-bg); color: var(--btn-fg);
+      font-weight: 700; font-size: .98rem; letter-spacing: -.005em;
+      transition: transform .25s var(--ease), box-shadow .25s var(--ease), background-color .25s var(--ease), color .25s;
+      white-space: nowrap;
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(96, 178, 50, .28); }
+    .btn:active { transform: translateY(0); }
+    .btn .ic, .btn svg.lucide { width: 18px; height: 18px; }
+    .btn--orange { --btn-bg: var(--orange); --btn-fg: #fff; }
+    .btn--orange:hover { box-shadow: 0 10px 24px rgba(234, 105, 28, .3); }
+    .btn--ghost { --btn-bg: transparent; --btn-fg: var(--text); box-shadow: inset 0 0 0 1.5px var(--line-strong); }
+    .btn--ghost:hover { --btn-bg: var(--surface); box-shadow: inset 0 0 0 1.5px var(--green), var(--shadow-sm); }
+    .btn--light { --btn-bg: #FFFBF4; --btn-fg: #16301B; }
+    .btn--light:hover { box-shadow: 0 10px 24px rgba(0, 0, 0, .18); }
+    .btn--lg { min-height: 60px; padding: 0 32px; font-size: 1.04rem; }
+
+    /* patinha que "pisa" no hover */
+    .btn .paw-step { width: 16px; height: 16px; transition: transform .35s var(--ease); }
+    .btn:hover .paw-step { transform: rotate(-18deg) translateY(-2px); animation: pawTap .5s var(--ease); }
+    @keyframes pawTap { 0% { transform: rotate(0) } 40% { transform: rotate(-24deg) translateY(-3px) } 100% { transform: rotate(-18deg) translateY(-2px) } }
+
+    .stars { display: inline-flex; gap: 2px; color: var(--orange); }
+    .stars .ic { width: 16px; height: 16px; }
+
+    /* Etiqueta no formato de plaquinha de coleira */
+    .tag {
+      position: relative;
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 7px 14px 7px 26px;
+      border-radius: 8px 999px 999px 8px;
+      background: var(--surface);
+      font-size: .85rem; font-weight: 700;
+      box-shadow: var(--shadow-sm);
+    }
+    .tag::before {
+      content: ""; position: absolute; left: 10px; top: 50%;
+      width: 7px; height: 7px; margin-top: -3.5px; border-radius: 50%;
+      background: var(--bg); box-shadow: inset 0 0 0 1.5px var(--line-strong);
+    }
+
+    /* Divisor orgânico */
+    .wave { display: block; width: 100%; height: 48px; color: var(--bg-alt); }
+    .wave--flip { transform: scaleY(-1); }
+
+    /* =========================================================
+       HEADER
+       ========================================================= */
+    .site-header {
+      position: fixed; inset: 14px 0 auto 0; z-index: 50;
+      padding-inline: var(--gutter);
+      transition: inset .35s var(--ease);
+    }
+    .site-header__bar {
+      max-width: calc(var(--container) - 2 * var(--gutter) + 40px);
+      margin-inline: auto;
+      height: var(--header-h);
+      display: flex; align-items: center; gap: 20px;
+      padding: 0 12px 0 22px;
+      border-radius: 999px;
+      background: color-mix(in srgb, var(--surface) 88%, transparent);
+      -webkit-backdrop-filter: saturate(1.4) blur(12px);
+      backdrop-filter: saturate(1.4) blur(12px);
+      box-shadow: 0 1px 0 var(--line), 0 8px 30px rgba(22, 48, 27, .06);
+      transition: height .35s var(--ease), box-shadow .35s var(--ease), background-color .35s;
+    }
+    .site-header.is-scrolled { inset: 8px 0 auto 0; }
+    .site-header.is-scrolled .site-header__bar {
+      height: 64px;
+      background: color-mix(in srgb, var(--surface) 95%, transparent);
+      box-shadow: 0 1px 0 var(--line), 0 14px 40px rgba(22, 48, 27, .12);
+    }
+
+    .brand { display: inline-flex; align-items: center; flex-shrink: 0; }
+    .brand__img { height: 62px; width: 62px; border-radius: 50%; box-shadow: 0 4px 14px rgba(22, 48, 27, .14); transition: height .35s var(--ease), width .35s var(--ease), transform .35s var(--ease); }
+    .brand:hover .brand__img { transform: rotate(-6deg); }
+    .is-scrolled .brand__img { height: 50px; width: 50px; }
+    /* Marca provisória (exibida apenas se o arquivo do logotipo não estiver presente) */
+    .brand__fallback { display: inline-flex; align-items: center; gap: 10px; }
+    .brand__fallback[hidden] { display: none; }
+    .brand__mark {
+      width: 42px; height: 42px; border-radius: 14px 14px 14px 4px;
+      display: grid; place-items: center;
+      background: var(--green); color: #fff;
+      transition: width .35s, height .35s;
+    }
+    .brand__mark .ic { width: 22px; height: 22px; }
+    .is-scrolled .brand__mark { width: 38px; height: 38px; }
+    .brand__words { display: flex; flex-direction: column; line-height: 1; }
+    .brand__name { font-family: var(--font-display); font-weight: 750; font-size: 1.45rem; letter-spacing: -.03em; color: var(--text); }
+    .brand__sub { margin-top: 4px; font-size: .62rem; font-weight: 800; letter-spacing: .24em; color: var(--orange); }
+
+    .nav { margin-left: auto; }
+    .nav__list { display: flex; align-items: center; gap: 4px; }
+    .nav__link {
+      position: relative; display: block;
+      padding: 10px 14px; border-radius: 999px;
+      font-size: .94rem; font-weight: 600; color: var(--text-soft);
+      transition: color .2s, background-color .2s;
+    }
+    .nav__link:hover { color: var(--text); background: var(--green-tint); }
+    .nav__link.is-active { color: var(--text); }
+    .nav__link.is-active::after {
+      content: ""; position: absolute; left: 50%; bottom: 3px; width: 5px; height: 5px; margin-left: -2.5px;
+      border-radius: 50%; background: var(--orange);
+    }
+
+    .header-actions { display: flex; align-items: center; gap: 10px; margin-left: 12px; }
+    .header-cta { min-height: 46px; padding: 0 20px; font-size: .92rem; }
+    .header-cta .ic { width: 18px; height: 18px; }
+
+    .icon-btn {
+      position: relative;
+      width: 46px; height: 46px; border-radius: 50%;
+      display: grid; place-items: center;
+      color: var(--text);
+      transition: background-color .2s;
+    }
+    .icon-btn:hover { background: var(--green-tint); }
+    .icon-btn .ic, .icon-btn svg.lucide { width: 22px; height: 22px; }
+
+    .cart-count {
+      position: absolute; top: 3px; right: 1px;
+      min-width: 20px; height: 20px; padding: 0 5px;
+      display: grid; place-items: center;
+      border-radius: 999px; border: 2px solid var(--surface);
+      background: var(--orange); color: #fff;
+      font-size: .68rem; font-weight: 800; line-height: 1;
+      transform: scale(0); transition: transform .3s var(--ease);
+    }
+    .cart-count.has-items { transform: scale(1); }
+    .cart-count.bump { animation: bump .45s var(--ease); }
+    @keyframes bump { 0% { transform: scale(1) } 40% { transform: scale(1.35) } 100% { transform: scale(1) } }
+
+    /* Interruptor de tema com patinha / gatinho dormindo */
+    .theme-toggle {
+      position: relative; flex-shrink: 0;
+      width: 64px; height: 34px; border-radius: 999px;
+      background: var(--green-tint);
+      box-shadow: inset 0 0 0 1px var(--line);
+    }
+    .theme-toggle__trail { position: absolute; right: 9px; top: 50%; display: flex; gap: 3px; transform: translateY(-50%); color: var(--green); opacity: .45; transition: opacity .3s; }
+    .theme-toggle__trail .ic { width: 8px; height: 8px; }
+    .theme-toggle__trail .ic:nth-child(2) { transform: translateY(-4px) rotate(12deg); }
+    .theme-toggle__zzz { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); font-family: var(--font-display); font-style: italic; font-weight: 600; font-size: .7rem; letter-spacing: .02em; color: var(--green-ink); opacity: 0; transition: opacity .3s .1s; }
+    .theme-toggle__zzz span { display: inline-block; }
+    .theme-toggle__zzz span:nth-child(2) { font-size: .55rem; transform: translateY(-4px); }
+    .theme-toggle__knob {
+      position: absolute; top: 3px; left: 3px;
+      width: 28px; height: 28px; border-radius: 50%;
+      display: grid; place-items: center;
+      background: var(--surface); color: var(--green);
+      box-shadow: 0 2px 6px rgba(22, 48, 27, .18);
+      transition: transform .45s cubic-bezier(.5, 1.6, .4, 1), background-color .3s;
+    }
+    .theme-toggle__knob > svg { position: absolute; width: 17px; height: 17px; transition: opacity .25s, transform .4s var(--ease); }
+    .theme-toggle__cat { opacity: 0; transform: scale(.4) rotate(-40deg); }
+    .theme-toggle:hover .theme-toggle__paw { animation: pawTap .5s var(--ease); }
+    [data-theme="dark"] .theme-toggle { background: #243426; }
+    [data-theme="dark"] .theme-toggle__knob { transform: translateX(30px); background: #F4EFE3; color: #1C3A1F; }
+    [data-theme="dark"] .theme-toggle__paw { opacity: 0; transform: scale(.4) rotate(40deg); }
+    [data-theme="dark"] .theme-toggle__cat { opacity: 1; transform: none; }
+    [data-theme="dark"] .theme-toggle__trail { opacity: 0; }
+    [data-theme="dark"] .theme-toggle__zzz { opacity: .9; }
+    [data-theme="dark"] .theme-toggle__zzz span { animation: zzz 2.4s ease-in-out infinite; }
+    [data-theme="dark"] .theme-toggle__zzz span:nth-child(2) { animation-delay: .4s; }
+    @keyframes zzz { 0%, 100% { opacity: .35 } 50% { opacity: 1 } }
+
+    .burger { display: none; }
+    .burger__lines { position: relative; width: 20px; height: 14px; }
+    .burger__lines span { position: absolute; left: 0; height: 2px; border-radius: 2px; background: currentColor; transition: transform .3s var(--ease), opacity .2s, width .3s; }
+    .burger__lines span:nth-child(1) { top: 0; width: 20px; }
+    .burger__lines span:nth-child(2) { top: 6px; width: 14px; }
+    .burger__lines span:nth-child(3) { top: 12px; width: 20px; }
+    .burger[aria-expanded="true"] .burger__lines span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+    .burger[aria-expanded="true"] .burger__lines span:nth-child(2) { opacity: 0; }
+    .burger[aria-expanded="true"] .burger__lines span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+    /* Menu mobile */
+    .mnav {
+      position: fixed; inset: 0; z-index: 45;
+      display: flex; flex-direction: column;
+      padding: 110px var(--gutter) 28px;
+      background: var(--bg);
+      opacity: 0; visibility: hidden; transform: translateY(-12px);
+      transition: opacity .35s var(--ease), transform .35s var(--ease), visibility 0s .35s;
+      overflow-y: auto;
+    }
+    .mnav.is-open { opacity: 1; visibility: visible; transform: none; transition: opacity .35s var(--ease), transform .35s var(--ease); }
+    .mnav__list { display: flex; flex-direction: column; }
+    .mnav__list li { opacity: 0; transform: translateY(10px); transition: opacity .35s var(--ease), transform .35s var(--ease); transition-delay: calc(var(--i) * 45ms + 80ms); }
+    .mnav.is-open .mnav__list li { opacity: 1; transform: none; }
+    .mnav__link {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 4px; border-bottom: 1px solid var(--line);
+      font-family: var(--font-display); font-size: 1.7rem; font-weight: 600; letter-spacing: -.02em;
+    }
+    .mnav__link svg.lucide { width: 22px; height: 22px; color: var(--green); }
+    .mnav__foot { margin-top: auto; padding-top: 28px; display: grid; gap: 14px; }
+    .mnav__foot .btn { width: 100%; }
+    .mnav__note { display: flex; align-items: center; gap: 8px; justify-content: center; font-size: .88rem; color: var(--muted); }
+    .mnav__note .stars .ic { width: 13px; height: 13px; }
+    body.menu-open { overflow: hidden; }
+
+    /* =========================================================
+       HERO
+       ========================================================= */
+    .hero { padding: calc(var(--header-h) + 72px) 0 120px; overflow: hidden; }
+    .hero__deco-paws { position: absolute; left: -70px; bottom: -10px; width: 190px; color: var(--green); opacity: .07; pointer-events: none; }
+    .hero__grid { display: grid; grid-template-columns: 1.02fr 1fr; align-items: center; gap: 48px; }
+    .hero__badge {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 8px 16px 8px 8px; border-radius: 999px;
+      background: var(--surface); box-shadow: var(--shadow-sm);
+      font-size: .9rem; font-weight: 600; color: var(--text-soft);
+    }
+    .hero__badge i { width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; background: var(--orange-tint); color: var(--orange); }
+    .hero__badge .ic { width: 15px; height: 15px; }
+    .hero h1 {
+      margin-top: 26px;
+      font-size: clamp(2.6rem, 1.2rem + 4.3vw, 5.4rem);
+      font-weight: 650; line-height: 1.02; letter-spacing: -.035em;
+    }
+    .hero h1 .hl { position: relative; display: inline-block; font-style: italic; font-weight: 600; color: var(--green-ink); white-space: nowrap; padding-right: .06em; }
+    .hero h1 .hl svg { position: absolute; left: 0; right: 0; bottom: -.12em; width: 100%; height: .28em; overflow: visible; }
+    .hero h1 .hl path { stroke-dasharray: 320; stroke-dashoffset: 320; animation: draw .9s .5s var(--ease) forwards; }
+    @keyframes draw { to { stroke-dashoffset: 0; } }
+    .hero__lead { margin-top: 26px; max-width: 470px; font-size: clamp(1.05rem, .98rem + .3vw, 1.2rem); color: var(--text-soft); }
+    .hero__ctas { margin-top: 34px; display: flex; flex-wrap: wrap; gap: 12px; }
+    .hero__proof { margin-top: 40px; display: flex; align-items: center; gap: 16px; }
+    .avatars { display: flex; }
+    .avatars .ph { width: 42px; height: 42px; border-radius: 50%; border: 3px solid var(--bg); margin-left: -12px; background-size: 50%; }
+    .avatars .ph:first-child { margin-left: 0; }
+    .hero__proof-text { line-height: 1.35; }
+    .hero__proof-top { display: flex; align-items: center; gap: 8px; font-weight: 800; }
+    .hero__proof-text small { display: block; font-size: .88rem; color: var(--muted); }
+
+    .hero__visual { position: relative; aspect-ratio: 1 / 1.02; max-width: 580px; width: 100%; justify-self: end; }
+    .hero__blob {
+      position: absolute; inset: 7% 0 4% 14%;
+      background: var(--green);
+      border-radius: 58% 42% 46% 54% / 50% 56% 44% 50%;
+      transform: rotate(-6deg);
+    }
+    .hero__ring { position: absolute; right: -2%; top: 2%; width: 30%; aspect-ratio: 1; border-radius: 50%; border: 2px dashed color-mix(in srgb, var(--orange) 55%, transparent); }
+    .hero__dot { position: absolute; right: 8%; bottom: 10%; width: 11%; aspect-ratio: 1; border-radius: 50%; background: var(--orange); }
+    .hero__main {
+      position: absolute; inset: 3% 5% 8% 18%;
+      border-radius: 46% 54% 40% 60% / 54% 44% 56% 46%;
+      box-shadow: var(--shadow-lg);
+    }
+    .hero__cat {
+      position: absolute; left: 2%; bottom: 4%;
+      width: 36%; aspect-ratio: 1; border-radius: 50%;
+      border: 7px solid var(--bg);
+      box-shadow: var(--shadow-md);
+    }
+    .hero__leaf { position: absolute; color: var(--green); }
+    .hero__leaf--1 { left: 8%; top: 12%; width: 13%; transform: rotate(-24deg); opacity: .9; }
+    .hero__leaf--2 { left: 16%; top: 5%; width: 7%; transform: rotate(18deg); color: var(--green-ink); opacity: .6; }
+    .hero__bone { position: absolute; right: 2%; top: 44%; width: 9%; color: var(--orange); opacity: .8; transform: rotate(-30deg); }
+    .float-chip {
+      position: absolute;
+      display: flex; align-items: center; gap: 12px;
+      padding: 10px 16px 10px 10px; border-radius: 18px;
+      background: var(--surface); box-shadow: var(--shadow-md);
+      font-size: .86rem; line-height: 1.3;
+      animation: bob 6s ease-in-out infinite;
+    }
+    .float-chip strong { display: block; font-size: .92rem; }
+    .float-chip span { color: var(--muted); }
+    .float-chip i { width: 38px; height: 38px; border-radius: 12px; display: grid; place-items: center; background: var(--green-tint); color: var(--green-ink); flex-shrink: 0; }
+    .float-chip i svg.lucide { width: 20px; height: 20px; }
+    .float-chip--a { left: 0; top: 20%; }
+    .float-chip--b { right: -2%; bottom: 22%; animation-delay: -3s; }
+    .float-chip--b i { background: var(--orange-tint); color: var(--orange); }
+    @keyframes bob { 0%, 100% { transform: translateY(0) } 50% { transform: translateY(-6px) } }
+
+    /* =========================================================
+       BENEFÍCIOS
+       ========================================================= */
+    .perks { margin-top: -64px; position: relative; z-index: 2; }
+    .perks__bar {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      padding: 10px; border-radius: var(--radius-lg);
+      background: var(--surface); box-shadow: var(--shadow-md);
+    }
+    .perk { display: flex; align-items: center; gap: 16px; padding: 20px 22px; position: relative; }
+    .perk + .perk::before { content: ""; position: absolute; left: 0; top: 24%; bottom: 24%; width: 1px; background: var(--line); }
+    .perk__ic { width: 50px; height: 50px; border-radius: 16px; display: grid; place-items: center; background: var(--green-tint); color: var(--green-ink); flex-shrink: 0; }
+    .perk__ic svg.lucide { width: 23px; height: 23px; }
+    .perk:nth-child(3) .perk__ic { background: var(--orange-tint); color: var(--orange); }
+    .perk h3 { font-family: var(--font-body); font-size: .78rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+    .perk p { margin-top: 3px; font-size: .94rem; color: var(--text-soft); line-height: 1.35; }
+
+    /* =========================================================
+       CATEGORIAS
+       ========================================================= */
+    .cats { padding: 120px 0 110px; }
+    .cats__grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1.3fr 1fr 1fr 1fr;
+      grid-template-rows: repeat(2, minmax(190px, auto));
+      gap: 16px;
+    }
+    .cat-photo {
+      grid-row: span 2; position: relative;
+      border-radius: var(--radius-lg); overflow: hidden;
+      min-height: 400px;
+      isolation: isolate;
+    }
+    .cat-photo .ph { position: absolute; inset: 0; }
+    .cat-photo::after { content: ""; position: absolute; inset: 45% 0 0; background: linear-gradient(transparent, rgba(12, 26, 14, .72)); z-index: 1; }
+    .cat-photo:hover img { transform: scale(1.05); }
+    .cat-photo__label { position: absolute; left: 24px; right: 24px; bottom: 22px; z-index: 2; color: #FFFBF4; display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; }
+    .cat-photo__label h3 { font-size: 2.1rem; }
+    .cat-photo__label p { font-size: .92rem; opacity: .85; }
+    .cat-photo__go { width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center; background: #FFFBF4; color: #16301B; flex-shrink: 0; transition: transform .3s var(--ease), background-color .3s; }
+    .cat-photo__go svg.lucide { width: 20px; height: 20px; }
+    .cat-photo:hover .cat-photo__go { transform: rotate(-45deg); background: var(--green); }
+
+    .cat-tile {
+      position: relative;
+      display: flex; flex-direction: column; justify-content: space-between;
+      padding: 22px; border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: 0 0 0 1px var(--line);
+      transition: transform .3s var(--ease), box-shadow .3s var(--ease), background-color .3s;
+      overflow: hidden;
+    }
+    .cat-tile__ic { width: 54px; height: 54px; border-radius: 18px; display: grid; place-items: center; background: var(--green-tint); color: var(--green-ink); transition: background-color .3s, color .3s, transform .3s var(--ease); }
+    .cat-tile__ic svg.lucide { width: 26px; height: 26px; }
+    .cat-tile h3 { font-family: var(--font-body); font-size: 1.08rem; font-weight: 750; letter-spacing: -.01em; margin-top: 20px; }
+    .cat-tile p { font-size: .87rem; color: var(--muted); margin-top: 4px; line-height: 1.4; }
+    .cat-tile::after {
+      content: ""; position: absolute; right: -14px; top: -14px; width: 70px; height: 70px;
+      background: currentColor; color: var(--green);
+      -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cellipse cx='6' cy='9.5' rx='2.2' ry='2.8'/%3E%3Cellipse cx='10' cy='5.5' rx='2.2' ry='2.9'/%3E%3Cellipse cx='14' cy='5.5' rx='2.2' ry='2.9'/%3E%3Cellipse cx='18' cy='9.5' rx='2.2' ry='2.8'/%3E%3Cpath d='M12 11c-3 0-6 3.6-6 6.3 0 1.8 1.4 2.7 3 2.7 1.2 0 2-.6 3-.6s1.8.6 3 .6c1.6 0 3-.9 3-2.7C18 14.6 15 11 12 11z'/%3E%3C/svg%3E") center / contain no-repeat;
+              mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cellipse cx='6' cy='9.5' rx='2.2' ry='2.8'/%3E%3Cellipse cx='10' cy='5.5' rx='2.2' ry='2.9'/%3E%3Cellipse cx='14' cy='5.5' rx='2.2' ry='2.9'/%3E%3Cellipse cx='18' cy='9.5' rx='2.2' ry='2.8'/%3E%3Cpath d='M12 11c-3 0-6 3.6-6 6.3 0 1.8 1.4 2.7 3 2.7 1.2 0 2-.6 3-.6s1.8.6 3 .6c1.6 0 3-.9 3-2.7C18 14.6 15 11 12 11z'/%3E%3C/svg%3E") center / contain no-repeat;
+      opacity: 0; transform: rotate(20deg) scale(.7);
+      transition: opacity .3s, transform .4s var(--ease);
+    }
+    .cat-tile:hover { transform: translateY(-5px); box-shadow: 0 0 0 1px var(--line), var(--shadow-md); }
+    .cat-tile:hover .cat-tile__ic { background: var(--green); color: var(--on-green); transform: rotate(-6deg); }
+    .cat-tile:hover::after { opacity: .1; transform: rotate(20deg) scale(1); }
+    .cat-tile--warm .cat-tile__ic { background: var(--orange-tint); color: var(--orange); }
+    .cat-tile--warm:hover .cat-tile__ic { background: var(--orange); color: #fff; }
+
+    /* =========================================================
+       PRODUTOS
+       ========================================================= */
+    .products { background: var(--bg-alt); padding: 70px 0 110px; }
+    .products-wrap .wave { margin-bottom: -1px; }
+
+    .carousel { position: relative; }
+    .carousel__track {
+      --per: 4; --gap: 20px;
+      display: grid; grid-auto-flow: column;
+      grid-auto-columns: calc((100% - (var(--per) - 1) * var(--gap)) / var(--per));
+      gap: var(--gap);
+      overflow-x: auto; overscroll-behavior-x: contain;
+      scroll-snap-type: x mandatory; scroll-behavior: smooth;
+      padding: 8px 4px 26px; margin: -8px -4px 0;
+      scrollbar-width: none;
+    }
+    .carousel__track::-webkit-scrollbar { display: none; }
+    .carousel__track > * { scroll-snap-align: start; }
+    .carousel__nav { display: flex; gap: 10px; }
+    .carousel__btn {
+      width: 52px; height: 52px; border-radius: 50%;
+      display: grid; place-items: center;
+      background: var(--surface); color: var(--text);
+      box-shadow: 0 0 0 1px var(--line), var(--shadow-sm);
+      transition: background-color .2s, color .2s, opacity .2s, transform .2s;
+    }
+    .carousel__btn:hover:not(:disabled) { background: var(--green); color: var(--on-green); transform: translateY(-2px); }
+    .carousel__btn:disabled { opacity: .35; cursor: default; }
+    .carousel__btn svg.lucide { width: 20px; height: 20px; }
+
+    .product {
+      display: flex; flex-direction: column;
+      border-radius: var(--radius-lg);
+      background: var(--surface);
+      box-shadow: 0 0 0 1px var(--line);
+      overflow: hidden;
+      transition: transform .3s var(--ease), box-shadow .3s var(--ease);
+    }
+    .product:hover { transform: translateY(-6px); box-shadow: 0 0 0 1px var(--line), var(--shadow-md); }
+    .product__media {
+      position: relative; margin: 10px 10px 0;
+      aspect-ratio: 5 / 4; border-radius: 24px;
+      display: grid; place-items: center;
+      background: var(--cream);
+      overflow: hidden;
+    }
+    .product__media.t-green { background: var(--green-tint); }
+    .product__media.t-orange { background: var(--orange-tint); }
+    .product__media svg.art { width: 76%; height: auto; transition: transform .5s var(--ease); }
+    .product:hover .product__media svg.art { transform: scale(1.06) rotate(-2deg); }
+    .product__badge { position: absolute; left: 14px; top: 14px; padding: 5px 11px; border-radius: 999px; background: var(--orange); color: #fff; font-size: .72rem; font-weight: 800; letter-spacing: .04em; }
+    .product__badge--green { background: var(--green); color: var(--on-green); }
+    .fav {
+      position: absolute; right: 12px; top: 12px;
+      width: 40px; height: 40px; border-radius: 50%;
+      display: grid; place-items: center;
+      background: var(--surface); color: var(--text-soft);
+      box-shadow: var(--shadow-sm);
+      transition: transform .2s var(--ease), color .2s;
+    }
+    .fav svg { width: 19px; height: 19px; fill: transparent; stroke: currentColor; stroke-width: 1.9; transition: fill .2s; }
+    .fav:hover { transform: scale(1.08); color: var(--orange); }
+    .fav[aria-pressed="true"] { color: var(--orange); }
+    .fav[aria-pressed="true"] svg { fill: currentColor; }
+    .fav.pop { animation: bump .4s var(--ease); }
+    .product__body { padding: 18px 20px 20px; display: flex; flex-direction: column; flex: 1; }
+    .product__cat { font-size: .74rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--green-ink); }
+    .product h3 { margin-top: 6px; font-family: var(--font-body); font-size: 1.1rem; font-weight: 750; letter-spacing: -.01em; line-height: 1.3; }
+    .product__meta { margin-top: 4px; font-size: .88rem; color: var(--muted); }
+    .product__foot { margin-top: auto; padding-top: 18px; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+    .price { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; letter-spacing: -.02em; }
+    .price small { font-family: var(--font-body); font-size: .8rem; font-weight: 700; color: var(--muted); margin-right: 2px; }
+    .add-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      height: 42px; padding: 0 16px 0 14px; border-radius: 999px;
+      background: var(--green-tint); color: var(--green-ink);
+      font-size: .88rem; font-weight: 750;
+      transition: background-color .2s, color .2s, transform .2s;
+    }
+    .add-btn svg.lucide { width: 17px; height: 17px; stroke-width: 2.4; }
+    .add-btn:hover { background: var(--green); color: var(--on-green); }
+    .add-btn:active { transform: scale(.95); }
+    .add-btn.added { background: var(--green); color: var(--on-green); }
+    .products__note { margin-top: 6px; font-size: .82rem; color: var(--muted); display: flex; align-items: center; gap: 8px; }
+
+    /* =========================================================
+       DELIVERY
+       ========================================================= */
+    .delivery { padding: 120px 0 0; }
+    .delivery__grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 72px; align-items: center; }
+    .delivery__visual { position: relative; padding-bottom: 60px; }
+    .delivery__photo { aspect-ratio: 4 / 3.3; border-radius: var(--radius-xl) var(--radius-xl) var(--radius-xl) 160px; box-shadow: var(--shadow-lg); }
+    .delivery__visual::before { content: ""; position: absolute; inset: -20px auto auto -20px; width: 42%; aspect-ratio: 1; border-radius: 50%; background: var(--green-tint); z-index: -1; }
+    .delivery__pet { position: absolute; right: -18px; bottom: 0; width: 34%; aspect-ratio: 273 / 400; border-radius: 26px; border: 6px solid var(--bg); box-shadow: var(--shadow-md); background-color: #EDEDEB; }
+    .delivery__tag { position: absolute; left: 24px; top: 24px; transform: rotate(-4deg); }
+    .delivery__tag .ic { color: var(--orange); width: 16px; height: 16px; }
+    .delivery h2 { margin-top: 16px; font-size: clamp(2.1rem, 1.3rem + 2.6vw, 3.5rem); }
+    .delivery__lead { margin-top: 18px; font-size: 1.08rem; color: var(--text-soft); max-width: 520px; }
+    .timeline { margin: 30px 0 34px; padding: 0; list-style: none; display: grid; gap: 12px; position: relative; }
+    .timeline li { position: relative; display: grid; grid-template-columns: 140px 1fr; align-items: center; gap: 18px; padding: 18px 22px 18px 46px; border-radius: var(--radius); background: var(--surface); box-shadow: 0 0 0 1px var(--line); }
+    .timeline li::before { content: ""; position: absolute; left: 20px; top: 50%; margin-top: -6px; width: 12px; height: 12px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 4px var(--green-tint); }
+    .timeline__time { display: block; font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; letter-spacing: -.02em; color: var(--green-ink); white-space: nowrap; }
+    .timeline li p { font-size: .95rem; color: var(--text-soft); line-height: 1.45; }
+    .timeline li p strong { color: var(--text); }
+    .timeline__last { background: var(--orange-tint) !important; box-shadow: none !important; }
+    .timeline__last::before { background: var(--orange) !important; }
+    .timeline__last .timeline__time { color: var(--orange-ink); }
+
+    /* =========================================================
+       BANHO & TOSA
+       ========================================================= */
+    .grooming { padding: 130px 0 90px; }
+    .grooming__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .grooming__visual { position: relative; }
+    .grooming__photo { aspect-ratio: 4 / 4.6; border-radius: 200px 200px var(--radius-xl) var(--radius-xl); box-shadow: var(--shadow-lg); }
+    .grooming__back { position: absolute; inset: 8% -6% -5% 8%; border-radius: 200px 200px var(--radius-xl) var(--radius-xl); background: var(--orange-tint); z-index: -1; }
+    .grooming__tag { position: absolute; top: 32px; right: -18px; transform: rotate(4deg); }
+    .grooming__tag .ic { color: var(--orange); width: 16px; height: 16px; }
+    .grooming__card {
+      position: absolute; left: -28px; bottom: 36px;
+      display: flex; align-items: center; gap: 14px;
+      padding: 14px 20px 14px 14px; border-radius: 20px;
+      background: var(--surface); box-shadow: var(--shadow-md);
+      max-width: 290px;
+    }
+    .grooming__thumb { width: 58px; height: 58px; border-radius: 16px; flex-shrink: 0; background-size: 40%; }
+    .grooming__card p { font-size: .88rem; color: var(--text-soft); line-height: 1.35; }
+    .grooming__card strong { display: block; color: var(--text); font-size: .95rem; }
+    .grooming h2 { font-size: clamp(2.1rem, 1.3rem + 2.6vw, 3.6rem); margin-top: 16px; }
+    .grooming__text { margin-top: 22px; font-size: 1.1rem; color: var(--text-soft); max-width: 520px; }
+    .checklist { margin-top: 30px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px 20px; max-width: 540px; }
+    .checklist li { display: flex; align-items: center; gap: 12px; font-weight: 600; }
+    .checklist li:last-child { grid-column: 1 / -1; }
+    .checklist i { width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; background: var(--green-tint); color: var(--green-ink); flex-shrink: 0; }
+    .checklist i svg.lucide { width: 15px; height: 15px; stroke-width: 3; }
+    .grooming__cta { margin-top: 38px; display: flex; flex-wrap: wrap; align-items: center; gap: 18px; }
+    .grooming__phone { font-size: .92rem; color: var(--muted); line-height: 1.35; }
+    .grooming__phone strong { display: block; color: var(--text); font-size: 1rem; }
+
+    /* =========================================================
+       CONFIANÇA
+       ========================================================= */
+    .trust { padding: 40px 0 120px; }
+    .trust__box {
+      position: relative; overflow: hidden;
+      display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 56px;
+      padding: 48px 56px; border-radius: var(--radius-xl);
+      background: var(--green-tint);
+    }
+    .trust__score { display: flex; align-items: baseline; gap: 6px; font-family: var(--font-display); line-height: 1; }
+    .trust__score b { font-size: clamp(4.2rem, 3rem + 3vw, 6.2rem); font-weight: 700; letter-spacing: -.05em; color: var(--green-ink); }
+    .trust__score span { font-size: 1.6rem; color: var(--muted); }
+    .trust__meta { margin-top: 10px; display: flex; align-items: center; gap: 10px; font-size: .92rem; font-weight: 600; color: var(--text-soft); }
+    .trust__mid h2 { font-size: clamp(1.9rem, 1.3rem + 1.8vw, 2.8rem); }
+    .trust__mid p { margin-top: 10px; font-size: 1.1rem; color: var(--text-soft); font-family: var(--font-display); font-style: italic; }
+    .pet-cluster { position: relative; width: 300px; height: 190px; }
+    .pet-cluster .ph { position: absolute; border-radius: 50%; border: 5px solid var(--surface); box-shadow: var(--shadow-sm); background-size: 40%; }
+    .pet-cluster .ph:nth-child(1) { width: 120px; height: 120px; left: 0; top: 40px; }
+    .pet-cluster .ph:nth-child(2) { width: 90px; height: 90px; left: 96px; top: 0; }
+    .pet-cluster .ph:nth-child(3) { width: 110px; height: 110px; left: 170px; top: 60px; }
+    .pet-cluster .ph:nth-child(4) { width: 72px; height: 72px; left: 104px; top: 112px; }
+    .pet-cluster .ph:nth-child(5) { width: 58px; height: 58px; left: 226px; top: 4px; }
+    .pet-cluster__heart { position: absolute; left: 186px; top: 38px; width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; background: var(--orange); color: #fff; box-shadow: var(--shadow-sm); z-index: 2; }
+    .pet-cluster__heart .ic { width: 16px; height: 16px; }
+    .trust__paws { position: absolute; right: -20px; bottom: -30px; width: 160px; color: var(--green); opacity: .1; pointer-events: none; }
+
+    /* =========================================================
+       AVALIAÇÕES
+       ========================================================= */
+    .reviews { background: var(--bg-alt); padding: 70px 0 110px; }
+    .reviews .carousel__track { --per: 3; --gap: 22px; }
+    .review {
+      position: relative;
+      display: flex; flex-direction: column;
+      padding: 32px 30px 28px; border-radius: var(--radius-lg);
+      background: var(--surface);
+      box-shadow: 0 0 0 1px var(--line);
+      min-height: 330px;
+    }
+    .review__quote { position: absolute; right: 26px; top: 12px; font-family: var(--font-display); font-size: 6rem; line-height: 1; color: var(--green); opacity: .18; }
+    .review blockquote { margin: 18px 0 0; font-family: var(--font-display); font-size: 1.3rem; font-weight: 500; line-height: 1.4; letter-spacing: -.01em; }
+    .review footer { margin-top: auto; padding-top: 26px; display: flex; align-items: center; gap: 12px; }
+    .review__avatar { width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center; background: var(--green); color: var(--on-green); font-weight: 800; font-size: .95rem; flex-shrink: 0; }
+    .review__name { font-weight: 750; line-height: 1.2; }
+    .review__src { font-size: .82rem; color: var(--muted); }
+    .review--green { background: var(--green-deep); color: #F3F0E6; box-shadow: none; }
+    :root[data-theme="dark"] .review--green { background: #1F3A22; }
+    .review--green .review__avatar { background: #FFFBF4; color: #1C3A1F; }
+    .review--green .review__src { color: rgba(243, 240, 230, .65); }
+    .review--green .review__quote { color: var(--green); opacity: .5; }
+    .review--cream { background: var(--cream); box-shadow: none; }
+    .review--cream .review__avatar { background: var(--orange); color: #fff; }
+    .review--cream .review__quote { color: var(--orange); opacity: .3; }
+    .review--tilt blockquote { font-style: italic; }
+    .review--outline .review__avatar { background: var(--orange-tint); color: var(--orange-ink); }
+    .reviews__bottom { margin-top: 10px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .dots { display: flex; gap: 8px; }
+    .dots button { width: 9px; height: 9px; border-radius: 999px; background: var(--line-strong); transition: width .3s var(--ease), background-color .3s; }
+    .dots button.is-active { width: 28px; background: var(--green); }
+    .reviews__all { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; color: var(--green-ink); }
+    .reviews__all svg.lucide { width: 18px; height: 18px; transition: transform .25s var(--ease); }
+    .reviews__all:hover svg.lucide { transform: translate(2px, -2px); }
+
+    /* =========================================================
+       CASHBACK
+       ========================================================= */
+    .cashback { background: var(--bg-alt); padding: 0 0 110px; }
+    .cashback__box {
+      position: relative; overflow: hidden;
+      display: grid; grid-template-columns: 1.2fr .8fr; align-items: center; gap: 40px;
+      padding: 56px 64px; border-radius: var(--radius-xl);
+      background: var(--orange); color: #FFF8F0;
+    }
+    .cashback__box::before { content: ""; position: absolute; right: -80px; top: -120px; width: 380px; height: 380px; border-radius: 50%; background: rgba(255, 255, 255, .08); }
+    .cashback__box::after { content: ""; position: absolute; left: 38%; bottom: -140px; width: 240px; height: 240px; border-radius: 50%; background: rgba(0, 0, 0, .06); }
+    .cashback .eyebrow { color: #FFE6D2; }
+    .cashback .eyebrow .ic { color: #fff; }
+    .cashback h2 { position: relative; margin-top: 14px; font-size: clamp(2.2rem, 1.4rem + 2.8vw, 4rem); color: #fff; }
+    .cashback p { position: relative; margin-top: 14px; font-size: 1.12rem; max-width: 460px; color: rgba(255, 248, 240, .9); }
+    .cashback .btn { margin-top: 30px; position: relative; }
+    .cashback__art { position: relative; z-index: 1; justify-self: center; width: 100%; max-width: 280px; }
+    .cashback__art svg { width: 100%; height: auto; transform-origin: 50% 8%; animation: swing 5s ease-in-out infinite; }
+    @keyframes swing { 0%, 100% { transform: rotate(-4deg) } 50% { transform: rotate(4deg) } }
+
+    /* =========================================================
+       BANNER PROMOCIONAL
+       ========================================================= */
+    .promo { padding: 120px 0 60px; }
+    .promo__box {
+      position: relative; overflow: hidden;
+      display: grid; grid-template-columns: 1fr 1fr; align-items: center;
+      min-height: 460px; border-radius: var(--radius-xl);
+      background: var(--green-deep); color: #F3F0E6;
+    }
+    :root[data-theme="dark"] .promo__box { background: #16291A; }
+    .promo__content { position: relative; z-index: 2; padding: 64px 0 64px 64px; }
+    .promo__content .eyebrow { color: var(--green); }
+    .promo h2 { margin-top: 16px; font-size: clamp(2.3rem, 1.4rem + 3vw, 4.2rem); color: #FFFBF4; }
+    .promo h2 em { font-weight: 550; color: var(--green); }
+    .promo p { margin-top: 18px; font-size: 1.12rem; max-width: 440px; color: rgba(243, 240, 230, .82); }
+    .promo .btn { margin-top: 32px; }
+    .promo__visual { position: relative; align-self: stretch; min-height: 380px; }
+    .promo__blob-o { position: absolute; right: -8%; top: 50%; width: 88%; aspect-ratio: 1; transform: translateY(-50%); border-radius: 52% 48% 42% 58% / 46% 54% 46% 54%; background: var(--orange); }
+    .promo__blob-g { position: absolute; left: 4%; bottom: -16%; width: 36%; aspect-ratio: 1; border-radius: 50%; background: var(--green); opacity: .9; }
+    .promo__photo { position: absolute; right: 4%; top: 50%; width: 72%; aspect-ratio: 1; transform: translateY(-50%); border-radius: 50%; border: 8px solid rgba(255, 251, 244, .14); }
+    .promo__tags { position: absolute; inset: 0; pointer-events: none; }
+    .promo__tags .tag { position: absolute; color: #16301B; background: #FFFBF4; }
+    .promo__tags .tag::before { background: var(--green-deep); box-shadow: none; }
+    .promo__tags .tag:nth-child(1) { left: 6%; top: 18%; transform: rotate(-6deg); }
+    .promo__tags .tag:nth-child(2) { left: 0; top: 62%; transform: rotate(4deg); }
+    .promo__tags .tag:nth-child(3) { right: 6%; bottom: 8%; transform: rotate(-3deg); }
+
+    /* =========================================================
+       SOBRE
+       ========================================================= */
+    .about { padding: 100px 0 120px; }
+    .about__grid { display: grid; grid-template-columns: .95fr 1.05fr; gap: 80px; align-items: center; }
+    .about__visual { position: relative; }
+    .about__photo { aspect-ratio: 1 / 1.08; border-radius: var(--radius-xl) var(--radius-xl) var(--radius-xl) 200px; box-shadow: var(--shadow-lg); }
+    .about__stat {
+      position: absolute; right: -26px; top: 40px;
+      padding: 18px 22px; border-radius: 22px;
+      background: var(--surface); box-shadow: var(--shadow-md);
+    }
+    .about__stat b { display: block; font-family: var(--font-display); font-size: 2.6rem; line-height: 1; color: var(--green-ink); }
+    .about__stat span { font-size: .88rem; font-weight: 600; color: var(--text-soft); }
+    .about__leaf { position: absolute; left: -24px; bottom: -22px; width: 88px; color: var(--green); transform: rotate(-12deg); }
+    .about h2 { margin-top: 16px; font-size: clamp(2.2rem, 1.3rem + 2.8vw, 3.8rem); }
+    .about__text { margin-top: 24px; display: grid; gap: 14px; font-size: 1.08rem; color: var(--text-soft); max-width: 560px; }
+    .pills { margin-top: 30px; display: flex; flex-wrap: wrap; gap: 10px; }
+    .pill {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 10px 16px; border-radius: 999px;
+      background: var(--surface); box-shadow: 0 0 0 1px var(--line);
+      font-weight: 650; font-size: .94rem;
+    }
+    .pill b { color: var(--orange); font-weight: 800; }
+    .about__sign {
+      margin-top: 34px; display: flex; align-items: center; gap: 14px;
+      padding-top: 26px; border-top: 1px dashed var(--line-strong);
+    }
+    .about__sign i { width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center; background: var(--orange-tint); color: var(--orange); flex-shrink: 0; }
+    .about__sign i svg.lucide { width: 22px; height: 22px; }
+    .about__sign p { font-family: var(--font-display); font-style: italic; font-size: 1.2rem; line-height: 1.3; }
+    .about__sign small { display: block; font-family: var(--font-body); font-style: normal; font-size: .85rem; color: var(--muted); }
+
+    /* =========================================================
+       FACILIDADES
+       ========================================================= */
+    .ease-sec { background: var(--bg-alt); padding: 70px 0 110px; }
+    .ease-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .ease-item {
+      display: flex; align-items: center; gap: 14px;
+      padding: 20px; border-radius: var(--radius);
+      background: var(--surface);
+      transition: transform .3s var(--ease), box-shadow .3s var(--ease);
+    }
+    .ease-item:hover { transform: translateY(-3px); box-shadow: var(--shadow-sm); }
+    .ease-item i { width: 46px; height: 46px; border-radius: 14px; display: grid; place-items: center; background: var(--green-tint); color: var(--green-ink); flex-shrink: 0; }
+    .ease-item i svg.lucide { width: 22px; height: 22px; }
+    .ease-item h3 { font-family: var(--font-body); font-size: 1rem; font-weight: 750; letter-spacing: -.01em; line-height: 1.25; }
+    .ease-item p { font-size: .86rem; color: var(--muted); line-height: 1.35; margin-top: 2px; }
+    .ease-item--wide { grid-column: span 2; background: var(--green-deep); color: #F3F0E6; }
+    :root[data-theme="dark"] .ease-item--wide { background: #1F3A22; }
+    .ease-item--wide i { background: rgba(96, 178, 50, .2); color: var(--green); }
+    .ease-item--wide p { color: rgba(243, 240, 230, .72); font-size: .92rem; }
+
+    /* =========================================================
+       LOJAS
+       ========================================================= */
+    .stores { padding: 120px 0 90px; }
+    .stores__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .store {
+      position: relative; overflow: hidden;
+      display: flex; flex-direction: column;
+      border-radius: var(--radius-xl);
+      background: var(--surface);
+      box-shadow: 0 0 0 1px var(--line);
+      transition: box-shadow .3s var(--ease), transform .3s var(--ease);
+    }
+    .store:hover { transform: translateY(-4px); box-shadow: 0 0 0 1px var(--line), var(--shadow-md); }
+    .store__map { position: relative; height: 170px; background: var(--green-tint); overflow: hidden; }
+    .store__map svg.streets { position: absolute; inset: 0; width: 100%; height: 100%; color: var(--green); opacity: .35; }
+    .store__map--photo { height: 240px; }
+    .store:hover .store__map--photo img { transform: scale(1.04); }
+    .store--b .store__map { background: var(--orange-tint); }
+    .store--b .store__map { height: 240px; }
+    .store--b .store__map svg.streets { color: var(--orange); opacity: .3; }
+    .store__pin { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -70%); display: grid; place-items: center; }
+    .store__pin span { width: 54px; height: 54px; border-radius: 50% 50% 50% 0; transform: rotate(-45deg); background: var(--green); display: grid; place-items: center; box-shadow: var(--shadow-md); }
+    .store__pin .ic { transform: rotate(45deg); width: 24px; height: 24px; color: #fff; }
+    .store--b .store__pin span { background: var(--orange); }
+    .store__pin::after { content: ""; position: absolute; bottom: -20px; width: 22px; height: 7px; border-radius: 50%; background: rgba(0, 0, 0, .14); }
+    .store__body { padding: 30px 34px 34px; display: flex; flex-direction: column; flex: 1; }
+    .store__kicker { font-size: .74rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+    .store h3 { margin-top: 6px; font-size: 2.2rem; }
+    .store__info { margin-top: 20px; display: grid; gap: 12px; }
+    .store__info li { display: flex; gap: 12px; align-items: flex-start; color: var(--text-soft); line-height: 1.45; }
+    .store__info svg.lucide { width: 19px; height: 19px; margin-top: 2px; color: var(--green-ink); }
+    .store__info a:hover { color: var(--green-ink); text-decoration: underline; text-underline-offset: 3px; }
+    .store__btns { margin-top: auto; padding-top: 28px; display: flex; gap: 10px; flex-wrap: wrap; }
+    .store__btns .btn { flex: 1; min-width: 150px; }
+
+    /* =========================================================
+       CTA FINAL
+       ========================================================= */
+    .final { padding: 30px 0 120px; }
+    .final__box { position: relative; overflow: hidden; border-radius: var(--radius-xl); min-height: 560px; display: flex; align-items: flex-end; isolation: isolate; }
+    .final__box > .ph { position: absolute; inset: 0; z-index: -2; }
+    .final__box::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(10, 24, 13, .9) 0%, rgba(10, 24, 13, .72) 40%, rgba(10, 24, 13, .1) 78%); }
+    .final__content { padding: 64px; max-width: 700px; color: #FFFBF4; }
+    .final h2 { font-size: clamp(2.2rem, 1.3rem + 3vw, 4.1rem); color: #FFFBF4; }
+    .final h2 em { display: block; font-weight: 550; color: #9ED872; }
+    .final p { margin-top: 18px; font-size: 1.15rem; color: rgba(255, 251, 244, .85); }
+    .final__ctas { margin-top: 32px; display: flex; flex-wrap: wrap; gap: 12px; }
+    .final .btn--ghost { --btn-fg: #FFFBF4; box-shadow: inset 0 0 0 1.5px rgba(255, 251, 244, .5); }
+    .final .btn--ghost:hover { --btn-bg: rgba(255, 251, 244, .12); box-shadow: inset 0 0 0 1.5px #FFFBF4; }
+
+    /* =========================================================
+       FOOTER
+       ========================================================= */
+    .footer { background: var(--footer-bg); color: rgba(243, 240, 230, .75); padding: 84px 0 30px; position: relative; overflow: hidden; }
+    .footer__paws { position: absolute; right: 4%; top: 40px; width: 220px; color: var(--green); opacity: .06; pointer-events: none; }
+    .footer__grid { display: grid; grid-template-columns: 1.5fr 1fr 1.2fr 1fr; gap: 48px; }
+    .footer .brand__img { height: 96px; width: 96px; box-shadow: none; }
+    .footer .brand__name { color: #FFFBF4; }
+    .footer__tagline { margin-top: 20px; font-family: var(--font-display); font-style: italic; font-size: 1.3rem; line-height: 1.35; color: #FFFBF4; max-width: 280px; }
+    .footer h4 { font-family: var(--font-body); font-size: .76rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; color: var(--green); margin-bottom: 18px; }
+    .footer__links { display: grid; gap: 10px; }
+    .footer__links a { transition: color .2s; }
+    .footer__links a:hover { color: #FFFBF4; }
+    .footer__addr { display: grid; gap: 6px; line-height: 1.5; }
+    .footer__addr a:hover { color: #FFFBF4; }
+    .socials { display: flex; gap: 10px; }
+    .socials a { width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center; background: rgba(243, 240, 230, .08); color: #FFFBF4; transition: background-color .2s, transform .2s; }
+    .socials a:hover { background: var(--green); color: var(--on-green); transform: translateY(-2px); }
+    .socials .ic, .socials svg { width: 20px; height: 20px; }
+    .footer__handle { margin-top: 14px; font-size: .9rem; }
+    .footer__bottom { margin-top: 64px; padding-top: 24px; border-top: 1px solid rgba(243, 240, 230, .1); display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: .86rem; }
+    .footer__demo { font-size: .72rem; opacity: .35; letter-spacing: .04em; }
+
+    /* =========================================================
+       WHATSAPP FLUTUANTE + TOAST
+       ========================================================= */
+    .wa-float {
+      position: fixed; right: 22px; bottom: 22px; z-index: 40;
+      display: flex; align-items: center;
+      height: 60px; padding: 0 18px; border-radius: 999px;
+      background: var(--green); color: var(--on-green);
+      box-shadow: 0 10px 30px rgba(22, 48, 27, .28);
+      transition: transform .3s var(--ease), box-shadow .3s;
+    }
+    .wa-float .ic { width: 26px; height: 26px; flex-shrink: 0; }
+    .wa-float__label { max-width: 0; overflow: hidden; white-space: nowrap; font-weight: 750; font-size: .95rem; transition: max-width .4s var(--ease), margin .4s var(--ease); }
+    .wa-float:hover { transform: translateY(-3px); box-shadow: 0 14px 34px rgba(22, 48, 27, .34); }
+    .wa-float:hover .wa-float__label, .wa-float:focus-visible .wa-float__label { max-width: 180px; margin-left: 10px; }
+    .wa-float::before { content: ""; position: absolute; inset: 0; border-radius: inherit; box-shadow: 0 0 0 0 rgba(96, 178, 50, .45); animation: ping 3s ease-out infinite; }
+    @keyframes ping { 0% { box-shadow: 0 0 0 0 rgba(96, 178, 50, .45) } 70%, 100% { box-shadow: 0 0 0 16px rgba(96, 178, 50, 0) } }
+
+    .toast {
+      position: fixed; left: 50%; bottom: 28px; z-index: 60;
+      display: flex; align-items: center; gap: 12px;
+      padding: 12px 20px 12px 12px; border-radius: 999px;
+      background: #16301B; color: #FFFBF4;
+      box-shadow: var(--shadow-lg);
+      font-weight: 650; font-size: .95rem;
+      transform: translate(-50%, 24px); opacity: 0; pointer-events: none;
+      transition: transform .35s var(--ease), opacity .35s var(--ease);
+    }
+    :root[data-theme="dark"] .toast { background: #F4EFE3; color: #16301B; }
+    .toast.show { transform: translate(-50%, 0); opacity: 1; }
+    .toast i { width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; background: var(--green); color: var(--on-green); }
+    .toast .ic { width: 17px; height: 17px; }
+
+    /* =========================================================
+       REVEAL
+       ========================================================= */
+    .js .reveal { opacity: 0; transform: translateY(22px); transition: opacity .5s var(--ease), transform .5s var(--ease); transition-delay: var(--d, 0ms); }
+    .js .reveal.in { opacity: 1; transform: none; }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+      .js .reveal { opacity: 1; transform: none; }
+      .hero h1 .hl path { stroke-dashoffset: 0; }
+    }
+
+    /* =========================================================
+       RESPONSIVO
+       ========================================================= */
+    @media (min-width: 1600px) {
+      :root { --container: 1320px; }
+    }
+
+    @media (max-width: 1180px) {
+      .nav__link { padding: 10px 10px; font-size: .9rem; }
+      .header-cta span { display: none; }
+      .header-cta { width: 46px; padding: 0; }
+      .cats__grid { grid-template-columns: 1.2fr 1.2fr 1fr 1fr; }
+      .cats__grid .cat-tile:nth-last-child(-n+2) { display: none; }
+      .carousel__track { --per: 3; }
+      .trust__box { grid-template-columns: auto 1fr; }
+      .pet-cluster { display: none; }
+      .footer__grid { grid-template-columns: 1.4fr 1fr 1.2fr; }
+      .footer__grid > :last-child { grid-column: 1 / -1; }
+    }
+
+    @media (max-width: 1024px) {
+      :root { --header-h: 68px; }
+      .nav, .header-cta { display: none; }
+      .burger { display: grid; }
+      .header-actions { margin-left: auto; gap: 6px; }
+      .site-header__bar { padding: 0 8px 0 18px; }
+      .brand__img { height: 54px; width: 54px; }
+
+      .hero { padding-top: calc(var(--header-h) + 56px); padding-bottom: 110px; }
+      .hero__grid { grid-template-columns: 1fr; gap: 56px; }
+      .hero__copy { max-width: 640px; }
+      .hero__visual { justify-self: center; max-width: 520px; }
+      .perks__bar { grid-template-columns: repeat(2, 1fr); }
+      .perk:nth-child(3)::before { display: none; }
+      .perk:nth-child(n+3) { border-top: 1px solid var(--line); }
+
+      .cats__grid { grid-template-columns: repeat(3, 1fr); grid-template-rows: none; }
+      .cats__grid .cat-tile:nth-last-child(-n+2) { display: flex; }
+      .cat-photo { grid-row: auto; grid-column: span 3; min-height: 280px; }
+      .cat-photo + .cat-photo { grid-column: span 3; }
+      .cats__photos { display: contents; }
+
+      .grooming__grid, .about__grid, .delivery__grid { grid-template-columns: 1fr; gap: 64px; }
+      .delivery__visual { margin-inline: auto; width: 100%; max-width: 620px; }
+      .grooming__visual, .about__visual { max-width: 560px; width: 100%; margin-inline: auto; }
+      .promo__box { grid-template-columns: 1fr; }
+      .promo__content { padding: 56px 48px 12px; }
+      .promo__visual { min-height: 400px; }
+      .cashback__box { grid-template-columns: 1fr .6fr; padding: 48px; }
+      .ease-grid { grid-template-columns: repeat(2, 1fr); }
+      .stores__grid { grid-template-columns: 1fr; max-width: 640px; margin-inline: auto; }
+      .reviews .carousel__track { --per: 2; }
+    }
+
+    @media (min-width: 641px) and (max-width: 1024px) {
+      .cats__grid { grid-template-columns: repeat(6, 1fr); }
+      .cat-photo, .cat-photo + .cat-photo { grid-column: span 3; }
+      .cat-tile { grid-column: span 2; }
+      .carousel__track { --per: 2.3; }
+    }
+
+    @media (max-width: 640px) {
+      :root { --gutter: 18px; --header-h: 62px; --radius-lg: 26px; --radius-xl: 30px; }
+      body { font-size: .97rem; }
+      .site-header { inset: 10px 0 auto 0; padding-inline: 12px; }
+      .site-header.is-scrolled { inset: 6px 0 auto 0; }
+      .site-header.is-scrolled .site-header__bar { height: 58px; }
+      .site-header__bar { padding: 0 6px 0 14px; gap: 8px; }
+      .brand__img { height: 48px; width: 48px; }
+      .is-scrolled .brand__img { height: 44px; width: 44px; }
+      .brand__mark { width: 36px; height: 36px; border-radius: 12px 12px 12px 4px; }
+      .brand__mark .ic { width: 19px; height: 19px; }
+      .brand__name { font-size: 1.2rem; }
+      .brand__sub { font-size: .54rem; letter-spacing: .2em; }
+      .icon-btn { width: 42px; height: 42px; }
+      .theme-toggle { width: 58px; height: 32px; }
+      .theme-toggle__knob { width: 26px; height: 26px; }
+      [data-theme="dark"] .theme-toggle__knob { transform: translateX(26px); }
+      .mnav { padding-top: 96px; }
+
+      .section-head { margin-bottom: 30px; }
+      .section-head--row { flex-direction: column; align-items: flex-start; }
+      .section-head--row .carousel__nav { display: none; }
+
+      .hero { padding-top: calc(var(--header-h) + 40px); padding-bottom: 96px; }
+      .hero__grid { gap: 40px; }
+      .hero__badge { font-size: .84rem; }
+      .hero h1 { margin-top: 20px; font-size: clamp(2.45rem, 1.2rem + 6vw, 3rem); }
+      .hero__lead { margin-top: 18px; }
+      .hero__ctas { flex-direction: column; margin-top: 28px; }
+      .hero__ctas .btn { width: 100%; min-height: 56px; }
+      .hero__proof { margin-top: 28px; }
+      .hero__visual { max-width: 380px; }
+      .float-chip { padding: 8px 12px 8px 8px; font-size: .78rem; border-radius: 14px; }
+      .float-chip strong { font-size: .82rem; }
+      .float-chip i { width: 32px; height: 32px; border-radius: 10px; }
+      .float-chip--a { left: -2%; top: 14%; }
+      .float-chip--b { right: -3%; bottom: 18%; }
+      .hero__cat { border-width: 5px; }
+
+      .perks { margin-top: -56px; }
+      .perks__bar { padding: 6px; border-radius: 24px; }
+      .perk { flex-direction: column; align-items: flex-start; gap: 12px; padding: 18px 14px; }
+      .perk__ic { width: 42px; height: 42px; border-radius: 13px; }
+      .perk__ic svg.lucide { width: 20px; height: 20px; }
+      .perk h3 { font-size: .7rem; }
+      .perk p { font-size: .86rem; }
+
+      .cats { padding: 84px 0 80px; }
+      .cats__grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+      .cat-photo, .cat-photo + .cat-photo { grid-column: span 1; min-height: 230px; border-radius: 22px; }
+      .cat-photo__label { left: 16px; right: 12px; bottom: 14px; }
+      .cat-photo__label h3 { font-size: 1.55rem; }
+      .cat-photo__label p { display: none; }
+      .cat-photo__go { width: 36px; height: 36px; }
+      .cat-tile { flex-direction: row; align-items: center; justify-content: flex-start; gap: 12px; padding: 14px; border-radius: 18px; }
+      .cat-tile__ic { width: 44px; height: 44px; border-radius: 14px; }
+      .cat-tile__ic svg.lucide { width: 21px; height: 21px; }
+      .cat-tile h3 { margin-top: 0; font-size: .96rem; }
+      .cat-tile p { display: none; }
+
+      .products { padding: 50px 0 84px; }
+      .carousel__track {
+        --per: 1.3; --gap: 14px;
+        margin-inline: calc(var(--gutter) * -1);
+        padding-inline: var(--gutter);
+        scroll-padding-inline: var(--gutter);
+      }
+      .products .carousel__track { --per: 1.45; }
+      .product__body { padding: 16px; }
+      .product h3 { font-size: 1rem; }
+      .price { font-size: 1.3rem; }
+      .add-btn { height: 40px; padding: 0 12px; }
+      .add-btn .add-btn__txt { display: none; }
+      .add-btn { width: 40px; justify-content: center; padding: 0; }
+
+      .delivery { padding-top: 84px; }
+      .delivery__grid { gap: 44px; }
+      .delivery__visual { padding-bottom: 44px; }
+      .delivery__pet { right: -4px; width: 36%; border-width: 4px; border-radius: 18px; }
+      .delivery__tag { left: 12px; top: 14px; font-size: .78rem; }
+      .timeline { gap: 10px; margin: 24px 0 28px; }
+      .timeline li { grid-template-columns: 1fr; gap: 4px; padding: 16px 16px 16px 42px; }
+      .timeline li::before { left: 17px; top: 25px; margin-top: 0; }
+      .timeline__time { font-size: 1.25rem; }
+      .delivery .btn { width: 100%; }
+      .grooming { padding: 90px 0 60px; }
+      .grooming__grid { gap: 48px; }
+      .grooming__tag { right: 8px; top: 20px; }
+      .grooming__card { left: 12px; right: 12px; bottom: 14px; max-width: none; }
+      .grooming__back { inset: 6% -12px -12px 18px; }
+      .checklist { grid-template-columns: 1fr; }
+      .grooming__cta .btn { width: 100%; }
+      .grooming__text { font-size: 1.02rem; }
+
+      .trust { padding: 30px 0 84px; }
+      .trust__box { grid-template-columns: 1fr; gap: 20px; padding: 36px 26px; }
+      .pet-cluster { display: block; width: 260px; height: 170px; margin-top: 6px; transform: scale(.88); transform-origin: left top; }
+
+      .reviews { padding: 50px 0 84px; }
+      .reviews .carousel__track { --per: 1.12; }
+      .review { padding: 26px 22px 22px; min-height: 300px; }
+      .review blockquote { font-size: 1.14rem; }
+
+      .cashback { padding-bottom: 84px; }
+      .cashback__box { grid-template-columns: 1fr; padding: 40px 26px 34px; gap: 10px; text-align: left; }
+      .cashback__art { order: -1; max-width: 150px; justify-self: start; margin-bottom: 4px; }
+      .cashback .btn { width: 100%; }
+
+      .promo { padding: 84px 0 40px; }
+      .promo__content { padding: 40px 26px 0; }
+      .promo .btn { width: 100%; }
+      .promo__visual { min-height: 320px; }
+      .promo__tags .tag { font-size: .76rem; padding: 6px 12px 6px 22px; }
+      .promo__tags .tag::before { left: 8px; width: 6px; height: 6px; }
+
+      .about { padding: 70px 0 84px; }
+      .about__stat { right: 12px; top: 16px; padding: 14px 16px; }
+      .about__stat b { font-size: 2rem; }
+      .about__leaf { width: 60px; left: -6px; }
+
+      .ease-sec { padding: 50px 0 84px; }
+      .ease-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+      .ease-item { flex-direction: column; align-items: flex-start; padding: 16px; gap: 12px; }
+      .ease-item i { width: 40px; height: 40px; }
+      .ease-item h3 { font-size: .94rem; }
+      .ease-item--wide { grid-column: 1 / -1; flex-direction: row; align-items: center; }
+
+      .stores { padding: 84px 0 60px; }
+      .store__map, .store--b .store__map, .store__map--photo { height: 170px; }
+      .final__box video { object-position: 72% 50%; }
+      .store__body { padding: 24px 22px 26px; }
+      .store h3 { font-size: 1.85rem; }
+      .store__btns .btn { min-width: 0; min-height: 50px; padding: 0 14px; }
+
+      .final { padding: 20px 0 84px; }
+      .final__box { min-height: 600px; }
+      .final__box::before { background: linear-gradient(180deg, rgba(10, 24, 13, .05) 20%, rgba(10, 24, 13, .7) 55%, rgba(10, 24, 13, .9) 100%); }
+      .final__content { padding: 30px 24px; }
+      .final__ctas { flex-direction: column; }
+      .final__ctas .btn { width: 100%; }
+
+      .footer { padding: 64px 0 100px; }
+      .footer__grid { grid-template-columns: 1fr 1fr; gap: 36px 20px; }
+      .footer__grid > :first-child, .footer__grid > :last-child { grid-column: 1 / -1; }
+      .footer__bottom { flex-direction: column; align-items: flex-start; margin-top: 44px; }
+
+      .wa-float { right: 16px; bottom: 16px; height: 56px; width: 56px; padding: 0; justify-content: center; }
+      .wa-float:hover .wa-float__label { max-width: 0; margin: 0; }
+      .toast { bottom: 88px; width: max-content; max-width: calc(100% - 32px); font-size: .9rem; }
+    }
+
+    @media (max-width: 380px) {
+      .brand__sub { display: none; }
+      .perk p { font-size: .82rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Ícones personalizados (sprite) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-paw" viewBox="0 0 24 24"><ellipse cx="6" cy="9.5" rx="2.2" ry="2.8"/><ellipse cx="10" cy="5.5" rx="2.2" ry="2.9"/><ellipse cx="14" cy="5.5" rx="2.2" ry="2.9"/><ellipse cx="18" cy="9.5" rx="2.2" ry="2.8"/><path d="M12 11c-3 0-6 3.6-6 6.3 0 1.8 1.4 2.7 3 2.7 1.2 0 2-.6 3-.6s1.8.6 3 .6c1.6 0 3-.9 3-2.7C18 14.6 15 11 12 11z"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.4L12 17.2l-5.7 3.1 1.2-6.4-4.7-4.4 6.4-.8z"/></symbol>
+    <symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.21 3.07.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.42.25-.69.25-1.29.18-1.41-.08-.13-.27-.2-.57-.35zM12.05 21.8h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.9-9.88 2.64 0 5.12 1.03 6.98 2.9a9.82 9.82 0 0 1 2.9 6.99c-.01 5.45-4.44 9.88-9.89 9.88zm8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.69 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.16-3.49-8.41z"/></symbol>
+    <symbol id="i-insta" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r=".6" fill="currentColor"/></symbol>
+    <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M3 21C3 10.5 9.5 3.5 21.5 3c-.5 12-7.5 18-18.5 18z"/><path d="M3 21 15 9" fill="none" stroke="var(--bg)" stroke-width="1.1" stroke-linecap="round" opacity=".7"/></symbol>
+    <symbol id="i-bone" viewBox="0 0 24 24"><rect x="5.5" y="10" width="13" height="4" rx="2"/><circle cx="5.5" cy="9.3" r="2.6"/><circle cx="5.5" cy="14.7" r="2.6"/><circle cx="18.5" cy="9.3" r="2.6"/><circle cx="18.5" cy="14.7" r="2.6"/></symbol>
+    <symbol id="i-bag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1 12.2a1 1 0 0 1-1 .8H7a1 1 0 0 1-1-.8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/><g fill="currentColor" stroke="none" transform="translate(8.6 11.2) scale(.29)"><ellipse cx="6" cy="9.5" rx="2.2" ry="2.8"/><ellipse cx="10" cy="5.5" rx="2.2" ry="2.9"/><ellipse cx="14" cy="5.5" rx="2.2" ry="2.9"/><ellipse cx="18" cy="9.5" rx="2.2" ry="2.8"/><path d="M12 11c-3 0-6 3.6-6 6.3 0 1.8 1.4 2.7 3 2.7 1.2 0 2-.6 3-.6s1.8.6 3 .6c1.6 0 3-.9 3-2.7C18 14.6 15 11 12 11z"/></g></symbol>
+    <symbol id="i-paws-trail" viewBox="0 0 120 120"><use href="#i-paw" x="0" y="80" width="26" height="26" transform="rotate(-20 13 93)"/><use href="#i-paw" x="30" y="56" width="26" height="26" transform="rotate(10 43 69)"/><use href="#i-paw" x="48" y="24" width="26" height="26" transform="rotate(-20 61 37)"/><use href="#i-paw" x="80" y="4" width="26" height="26" transform="rotate(10 93 17)"/></symbol>
+  </svg>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header" id="topo">
+    <div class="site-header__bar">
+      <a href="#inicio" class="brand" aria-label="Iguana Empório Pet — início">
+        <img class="brand__img" src="assets/logo-iguana.png" alt="Iguana Empório Pet"
+             onerror="this.remove(); document.querySelectorAll('.brand__fallback').forEach(function(el){el.hidden=false});">
+        <span class="brand__fallback" hidden>
+          <span class="brand__mark"><svg class="ic"><use href="#i-paw"/></svg></span>
+          <span class="brand__words"><span class="brand__name">Iguana</span><span class="brand__sub">EMPÓRIO PET</span></span>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="Navegação principal">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="#inicio">Início</a></li>
+          <li><a class="nav__link" href="#loja">Loja</a></li>
+          <li><a class="nav__link" href="#banho-tosa">Banho &amp; Tosa</a></li>
+          <li><a class="nav__link" href="#sobre">Sobre</a></li>
+          <li><a class="nav__link" href="#avaliacoes">Avaliações</a></li>
+          <li><a class="nav__link" href="#lojas">Contato</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a class="btn header-cta" data-wa="main" href="https://wa.me/5541988951022" target="_blank" rel="noopener" aria-label="Falar conosco pelo WhatsApp">
+          <svg class="ic"><use href="#i-whatsapp"/></svg><span>Falar conosco</span>
+        </a>
+        <button class="icon-btn" type="button" aria-label="Sacola: 0 itens" data-cart-btn>
+          <svg class="ic"><use href="#i-bag"/></svg>
+          <span class="cart-count" data-cart-count>0</span>
+        </button>
+        <button class="theme-toggle" type="button" role="switch" aria-checked="false" aria-label="Ativar modo escuro" data-theme-toggle>
+          <span class="theme-toggle__zzz" aria-hidden="true"><span>z</span><span>z</span></span>
+          <span class="theme-toggle__trail" aria-hidden="true"><svg class="ic"><use href="#i-paw"/></svg><svg class="ic"><use href="#i-paw"/></svg></span>
+          <span class="theme-toggle__knob" aria-hidden="true">
+            <svg class="theme-toggle__paw" viewBox="0 0 24 24" fill="currentColor"><use href="#i-paw"/></svg>
+            <!-- gatinho dormindo -->
+            <svg class="theme-toggle__cat" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20.5 16.5c1.2 2.4-.9 4.5-4.8 4.5H8.2" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+              <ellipse cx="13.2" cy="16.2" rx="7.3" ry="4.3"/>
+              <circle cx="7.4" cy="14.4" r="3.9"/>
+              <path d="M4.2 12.6 4.1 8.6 7 11.1zM8.2 10.6l2.6-2.1.2 3.9z"/>
+              <path d="M5.6 14.9c.5.4 1 .4 1.5 0M8.3 14.9c.5.4 1 .4 1.5 0" fill="none" stroke="#F4EFE3" stroke-width=".9" stroke-linecap="round"/>
+            </svg>
+          </span>
+        </button>
+        <button class="icon-btn burger" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-mobile" data-burger>
+          <span class="burger__lines"><span></span><span></span><span></span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Menu mobile -->
+  <div class="mnav" id="menu-mobile" aria-hidden="true">
+    <ul class="mnav__list">
+      <li style="--i:0"><a class="mnav__link" href="#inicio">Início <i data-lucide="arrow-up-right"></i></a></li>
+      <li style="--i:1"><a class="mnav__link" href="#loja">Loja <i data-lucide="arrow-up-right"></i></a></li>
+      <li style="--i:2"><a class="mnav__link" href="#banho-tosa">Banho &amp; Tosa <i data-lucide="arrow-up-right"></i></a></li>
+      <li style="--i:3"><a class="mnav__link" href="#sobre">Sobre <i data-lucide="arrow-up-right"></i></a></li>
+      <li style="--i:4"><a class="mnav__link" href="#avaliacoes">Avaliações <i data-lucide="arrow-up-right"></i></a></li>
+      <li style="--i:5"><a class="mnav__link" href="#lojas">Contato <i data-lucide="arrow-up-right"></i></a></li>
+    </ul>
+    <div class="mnav__foot">
+      <a class="btn btn--lg" data-wa="main" href="https://wa.me/5541988951022" target="_blank" rel="noopener"><svg class="ic"><use href="#i-whatsapp"/></svg> Falar no WhatsApp</a>
+      <p class="mnav__note"><span class="stars"><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg></span> 4,9 no Google · Curitiba</p>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <svg class="hero__deco-paws" aria-hidden="true" fill="currentColor"><use href="#i-paws-trail"/></svg>
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <span class="hero__badge reveal"><i><svg class="ic"><use href="#i-paw"/></svg></i>Seu pet merece esse carinho.</span>
+          <h1 id="hero-title" class="reveal" style="--d:80ms">Tudo para deixar<br> seu pet <span class="hl">mais feliz.<svg viewBox="0 0 300 20" preserveAspectRatio="none" aria-hidden="true"><path d="M4 14C70 5 170 3 296 11" fill="none" stroke="#EA691C" stroke-width="5" stroke-linecap="round"/></svg></span></h1>
+          <p class="hero__lead reveal" style="--d:160ms">Produtos, carinho e cuidado para quem faz parte da família.</p>
+          <div class="hero__ctas reveal" style="--d:240ms">
+            <a class="btn btn--lg" href="#loja">Conhecer a loja <svg class="ic paw-step"><use href="#i-paw"/></svg></a>
+            <a class="btn btn--lg btn--ghost" data-wa="main" data-wa-msg="banho" href="https://wa.me/5541988951022" target="_blank" rel="noopener"><i data-lucide="scissors"></i> Agendar banho &amp; tosa</a>
+          </div>
+          <div class="hero__proof reveal" style="--d:320ms">
+            <div class="avatars" aria-hidden="true">
+              <span class="ph"><img src="assets/av-1.jpg" alt=""></span>
+              <span class="ph"><img src="assets/av-2.jpg" alt=""></span>
+              <span class="ph"><img src="assets/av-3.jpg" alt=""></span>
+            </div>
+            <div class="hero__proof-text">
+              <span class="hero__proof-top">
+                <span class="stars" aria-label="5 estrelas"><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg></span>
+                4,9 no Google
+              </span>
+              <small>Mais de 300 avaliações</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__visual reveal" style="--d:120ms" aria-label="Cachorro e gato felizes">
+          <div class="hero__blob" aria-hidden="true"></div>
+          <div class="hero__ring" aria-hidden="true"></div>
+          <div class="hero__dot" aria-hidden="true"></div>
+          <div class="hero__main ph">
+            <video class="loop-video" src="assets/video-banho.mp4" poster="assets/poster-banho.jpg" autoplay muted loop playsinline preload="auto" aria-label="Golden retriever feliz tomando banho"></video>
+          </div>
+          <div class="hero__cat ph">
+            <img src="assets/cliente-shihtzu-rosto.jpg" alt="Shih-tzu cliente da Iguana, de lacinho e bandana, após o banho">
+          </div>
+          <svg class="hero__leaf hero__leaf--1" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-leaf"/></svg>
+          <svg class="hero__leaf hero__leaf--2" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-leaf"/></svg>
+          <svg class="hero__bone" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-bone"/></svg>
+          <div class="float-chip float-chip--a"><i><i data-lucide="scissors"></i></i><p><strong>Banho &amp; Tosa</strong><span>com horário marcado</span></p></div>
+          <div class="float-chip float-chip--b"><i><i data-lucide="truck"></i></i><p><strong>Entrega no mesmo dia</strong><span>pedidos até as 18h</span></p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== BENEFÍCIOS ===================== -->
+    <section class="perks" aria-label="Benefícios">
+      <div class="container">
+        <ul class="perks__bar reveal">
+          <li class="perk"><span class="perk__ic"><i data-lucide="truck"></i></span><div><h3>Entrega</h3><p>Receba sem sair de casa</p></div></li>
+          <li class="perk"><span class="perk__ic"><i data-lucide="store"></i></span><div><h3>Retirada</h3><p>Compre e retire na loja</p></div></li>
+          <li class="perk"><span class="perk__ic"><i data-lucide="scissors"></i></span><div><h3>Banho &amp; Tosa</h3><p>Carinho em cada detalhe</p></div></li>
+          <li class="perk"><span class="perk__ic"><i data-lucide="heart-handshake"></i></span><div><h3>Atendimento</h3><p>Equipe que entende de pets</p></div></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===================== CATEGORIAS ===================== -->
+    <section class="cats" id="loja" aria-labelledby="cats-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow"><svg class="ic"><use href="#i-paw"/></svg> Nossa loja</span>
+          <h2 id="cats-title">Tudo que seu melhor <span class="italic-accent">amigo</span> precisa.</h2>
+          <p>Do petisco favorito ao cuidado de todos os dias.</p>
+        </div>
+
+        <div class="cats__grid">
+          <a class="cat-photo reveal" href="#favoritos">
+            <span class="ph"><img src="assets/corredor-racoes.jpg" alt="Corredor de rações da loja Iguana Empório Pet" loading="lazy" style="object-position: 70% 50%"></span>
+            <span class="cat-photo__label"><span><h3>Rações</h3><p>Secas, úmidas e especiais</p></span><span class="cat-photo__go"><i data-lucide="arrow-right"></i></span></span>
+          </a>
+          <a class="cat-photo reveal" style="--d:80ms" href="#favoritos">
+            <span class="ph"><img src="assets/parede-acessorios.jpg" alt="Parede de coleiras, guias, peitorais, bolsas e roupinhas na loja" loading="lazy" style="object-position: 40% 50%"></span>
+            <span class="cat-photo__label"><span><h3>Acessórios</h3><p>Coleiras, guias e bolsas</p></span><span class="cat-photo__go"><i data-lucide="arrow-right"></i></span></span>
+          </a>
+
+          <a class="cat-tile reveal" style="--d:120ms" href="#favoritos"><span class="cat-tile__ic"><i data-lucide="dog"></i></span><span><h3>Cães</h3><p>Do filhote ao sênior</p></span></a>
+          <a class="cat-tile reveal" style="--d:160ms" href="#favoritos"><span class="cat-tile__ic"><i data-lucide="cat"></i></span><span><h3>Gatos</h3><p>Para os exigentes da casa</p></span></a>
+          <a class="cat-tile cat-tile--warm reveal" style="--d:200ms" href="#favoritos"><span class="cat-tile__ic"><i data-lucide="bone"></i></span><span><h3>Petiscos</h3><p>Naturais e para treino</p></span></a>
+          <a class="cat-tile reveal" style="--d:240ms" href="#favoritos"><span class="cat-tile__ic"><i data-lucide="puzzle"></i></span><span><h3>Brinquedos</h3><p>Para gastar energia</p></span></a>
+          <a class="cat-tile reveal" style="--d:280ms" href="#favoritos"><span class="cat-tile__ic"><i data-lucide="bath"></i></span><span><h3>Higiene</h3><p>Shampoos, tapetes e areia</p></span></a>
+          <a class="cat-tile reveal" style="--d:320ms" href="#favoritos"><span class="cat-tile__ic"><i data-lucide="shirt"></i></span><span><h3>Roupinhas</h3><p>Para o frio de Curitiba</p></span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PRODUTOS ===================== -->
+    <div class="products-wrap">
+      <svg class="wave" viewBox="0 0 1440 48" preserveAspectRatio="none" aria-hidden="true"><path d="M0 48V26C180 6 360 0 560 12s420 34 620 26c110-4 190-16 260-26v36z" fill="currentColor"/></svg>
+      <section class="products" id="favoritos" aria-labelledby="prod-title">
+        <div class="container">
+          <div class="section-head section-head--row reveal">
+            <div>
+              <span class="eyebrow"><svg class="ic"><use href="#i-paw"/></svg> Mais pedidos</span>
+              <h2 id="prod-title">Favoritos dos pets</h2>
+              <p>Os itens que mais saem da prateleira — e que mais fazem o rabinho balançar.</p>
+            </div>
+            <div class="carousel__nav" data-carousel-nav="prod">
+              <button class="carousel__btn" type="button" data-prev aria-label="Produtos anteriores"><i data-lucide="chevron-left"></i></button>
+              <button class="carousel__btn" type="button" data-next aria-label="Próximos produtos"><i data-lucide="chevron-right"></i></button>
+            </div>
+          </div>
+
+          <div class="carousel" data-carousel="prod">
+            <div class="carousel__track" data-track>
+
+              <article class="product">
+                <div class="product__media">
+                  <span class="product__badge">Mais vendido</span>
+                  <button class="fav" type="button" aria-pressed="false" aria-label="Favoritar Ração Premium para Cães"><svg viewBox="0 0 24 24" stroke-linejoin="round"><path d="M12 20.3s-7.8-4.6-9.2-9.6C1.9 7.2 4 4 7.4 4c2 0 3.4 1.1 4.6 2.7C13.2 5.1 14.6 4 16.6 4 20 4 22.1 7.2 21.2 10.7c-1.4 5-9.2 9.6-9.2 9.6z"/></svg></button>
+                  <svg class="art" viewBox="0 0 200 170" aria-hidden="true">
+                    <ellipse cx="100" cy="158" rx="62" ry="7" fill="#16301B" opacity=".08"/>
+                    <path d="M56 40h88l10 20v82a12 12 0 0 1-12 12H58a12 12 0 0 1-12-12V60z" fill="#60B232"/>
+                    <path d="M52 30h96a4 4 0 0 1 4 4v8H48v-8a4 4 0 0 1 4-4z" fill="#4A8F24"/>
+                    <path d="M60 30v12M72 30v12M84 30v12M96 30v12M108 30v12M120 30v12M132 30v12M144 30v12" stroke="#3C7A1C" stroke-width="2"/>
+                    <rect x="62" y="70" width="76" height="62" rx="12" fill="#FFFBF4"/>
+                    <circle cx="100" cy="92" r="13" fill="#EA691C"/>
+                    <use href="#i-paw" x="91" y="83" width="18" height="18" fill="#fff"/>
+                    <rect x="76" y="113" width="48" height="5" rx="2.5" fill="#16301B" opacity=".75"/>
+                    <rect x="84" y="122" width="32" height="4" rx="2" fill="#16301B" opacity=".3"/>
+                    <circle cx="152" cy="150" r="5" fill="#B8783C"/><circle cx="163" cy="147" r="4.5" fill="#A56A33"/><circle cx="158" cy="140" r="4" fill="#C4884A"/>
+                  </svg>
+                </div>
+                <div class="product__body">
+                  <span class="product__cat">Rações</span>
+                  <h3>Ração Premium para Cães</h3>
+                  <p class="product__meta">Adultos · 10 kg</p>
+                  <div class="product__foot">
+                    <p class="price"><small>R$</small>189,90</p>
+                    <button class="add-btn" type="button" data-add aria-label="Adicionar Ração Premium para Cães à sacola"><i data-lucide="plus"></i><span class="add-btn__txt">Adicionar</span></button>
+                  </div>
+                </div>
+              </article>
+
+              <article class="product">
+                <div class="product__media t-orange">
+                  <button class="fav" type="button" aria-pressed="false" aria-label="Favoritar Petisco Natural"><svg viewBox="0 0 24 24" stroke-linejoin="round"><path d="M12 20.3s-7.8-4.6-9.2-9.6C1.9 7.2 4 4 7.4 4c2 0 3.4 1.1 4.6 2.7C13.2 5.1 14.6 4 16.6 4 20 4 22.1 7.2 21.2 10.7c-1.4 5-9.2 9.6-9.2 9.6z"/></svg></button>
+                  <svg class="art" viewBox="0 0 200 170" aria-hidden="true">
+                    <ellipse cx="100" cy="158" rx="54" ry="7" fill="#16301B" opacity=".08"/>
+                    <rect x="54" y="26" width="92" height="20" rx="8" fill="#EA691C"/>
+                    <rect x="50" y="44" width="100" height="110" rx="22" fill="#FFFBF4" stroke="#16301B" stroke-opacity=".12" stroke-width="2"/>
+                    <g fill="#D9A066">
+                      <use href="#i-bone" x="62" y="98" width="38" height="38" transform="rotate(-18 81 117)"/>
+                      <use href="#i-bone" x="98" y="104" width="40" height="40" transform="rotate(14 118 124)"/>
+                      <use href="#i-bone" x="80" y="118" width="36" height="36" transform="rotate(4 98 136)"/>
+                    </g>
+                    <rect x="66" y="58" width="68" height="34" rx="10" fill="#60B232"/>
+                    <rect x="78" y="68" width="44" height="5" rx="2.5" fill="#fff"/>
+                    <rect x="86" y="77" width="28" height="4" rx="2" fill="#fff" opacity=".7"/>
+                    <path d="M62 56c0 20 0 60 2 80" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".6"/>
+                  </svg>
+                </div>
+                <div class="product__body">
+                  <span class="product__cat">Petiscos</span>
+                  <h3>Petisco Natural</h3>
+                  <p class="product__meta">Ossinhos de frango · 100 g</p>
+                  <div class="product__foot">
+                    <p class="price"><small>R$</small>24,90</p>
+                    <button class="add-btn" type="button" data-add aria-label="Adicionar Petisco Natural à sacola"><i data-lucide="plus"></i><span class="add-btn__txt">Adicionar</span></button>
+                  </div>
+                </div>
+              </article>
+
+              <article class="product">
+                <div class="product__media t-green">
+                  <button class="fav" type="button" aria-pressed="false" aria-label="Favoritar Brinquedo Interativo"><svg viewBox="0 0 24 24" stroke-linejoin="round"><path d="M12 20.3s-7.8-4.6-9.2-9.6C1.9 7.2 4 4 7.4 4c2 0 3.4 1.1 4.6 2.7C13.2 5.1 14.6 4 16.6 4 20 4 22.1 7.2 21.2 10.7c-1.4 5-9.2 9.6-9.2 9.6z"/></svg></button>
+                  <svg class="art" viewBox="0 0 200 170" aria-hidden="true">
+                    <ellipse cx="100" cy="158" rx="50" ry="7" fill="#16301B" opacity=".08"/>
+                    <circle cx="100" cy="92" r="58" fill="#EA691C"/>
+                    <path d="M44 80c30 14 82 14 112 0" stroke="#FFFBF4" stroke-width="7" fill="none" stroke-linecap="round"/>
+                    <path d="M48 116c28-10 76-10 104 0" stroke="#FFFBF4" stroke-width="7" fill="none" stroke-linecap="round" opacity=".55"/>
+                    <circle cx="82" cy="58" r="8" fill="#16301B" opacity=".75"/>
+                    <circle cx="124" cy="62" r="6" fill="#16301B" opacity=".75"/>
+                    <circle cx="100" cy="100" r="9" fill="#16301B" opacity=".75"/>
+                    <circle cx="70" cy="136" r="5" fill="#16301B" opacity=".6"/>
+                    <ellipse cx="76" cy="50" rx="16" ry="8" fill="#fff" opacity=".22" transform="rotate(-30 76 50)"/>
+                    <circle cx="160" cy="150" r="5" fill="#B8783C"/><circle cx="148" cy="154" r="4" fill="#A56A33"/>
+                  </svg>
+                </div>
+                <div class="product__body">
+                  <span class="product__cat">Brinquedos</span>
+                  <h3>Brinquedo Interativo</h3>
+                  <p class="product__meta">Bolinha que libera petiscos</p>
+                  <div class="product__foot">
+                    <p class="price"><small>R$</small>59,90</p>
+                    <button class="add-btn" type="button" data-add aria-label="Adicionar Brinquedo Interativo à sacola"><i data-lucide="plus"></i><span class="add-btn__txt">Adicionar</span></button>
+                  </div>
+                </div>
+              </article>
+
+              <article class="product">
+                <div class="product__media">
+                  <button class="fav" type="button" aria-pressed="false" aria-label="Favoritar Coleira Confort"><svg viewBox="0 0 24 24" stroke-linejoin="round"><path d="M12 20.3s-7.8-4.6-9.2-9.6C1.9 7.2 4 4 7.4 4c2 0 3.4 1.1 4.6 2.7C13.2 5.1 14.6 4 16.6 4 20 4 22.1 7.2 21.2 10.7c-1.4 5-9.2 9.6-9.2 9.6z"/></svg></button>
+                  <svg class="art" viewBox="0 0 200 170" aria-hidden="true">
+                    <ellipse cx="100" cy="158" rx="60" ry="7" fill="#16301B" opacity=".08"/>
+                    <ellipse cx="100" cy="74" rx="66" ry="34" fill="none" stroke="#4A8F24" stroke-width="18"/>
+                    <path d="M34 74c0 19 30 34 66 34s66-15 66-34" fill="none" stroke="#60B232" stroke-width="18"/>
+                    <path d="M40 74c2 12 20 24 44 29" fill="none" stroke="#fff" stroke-opacity=".35" stroke-width="2" stroke-dasharray="4 5"/>
+                    <path d="M160 74c-2 12-20 24-44 29" fill="none" stroke="#fff" stroke-opacity=".35" stroke-width="2" stroke-dasharray="4 5"/>
+                    <rect x="88" y="96" width="24" height="22" rx="5" fill="#D8D2C2" stroke="#9C9582" stroke-width="2"/>
+                    <circle cx="100" cy="126" r="5" fill="none" stroke="#9C9582" stroke-width="3"/>
+                    <path d="M100 131c-14 0-20 8-20 14 0 7 8 12 20 12s20-5 20-12c0-6-6-14-20-14z" fill="#EA691C"/>
+                    <use href="#i-paw" x="92" y="136" width="16" height="16" fill="#fff"/>
+                  </svg>
+                </div>
+                <div class="product__body">
+                  <span class="product__cat">Acessórios</span>
+                  <h3>Coleira Confort</h3>
+                  <p class="product__meta">Acolchoada · do P ao GG</p>
+                  <div class="product__foot">
+                    <p class="price"><small>R$</small>49,90</p>
+                    <button class="add-btn" type="button" data-add aria-label="Adicionar Coleira Confort à sacola"><i data-lucide="plus"></i><span class="add-btn__txt">Adicionar</span></button>
+                  </div>
+                </div>
+              </article>
+
+              <article class="product">
+                <div class="product__media t-orange">
+                  <span class="product__badge product__badge--green">Novidade</span>
+                  <button class="fav" type="button" aria-pressed="false" aria-label="Favoritar Caminha Pet"><svg viewBox="0 0 24 24" stroke-linejoin="round"><path d="M12 20.3s-7.8-4.6-9.2-9.6C1.9 7.2 4 4 7.4 4c2 0 3.4 1.1 4.6 2.7C13.2 5.1 14.6 4 16.6 4 20 4 22.1 7.2 21.2 10.7c-1.4 5-9.2 9.6-9.2 9.6z"/></svg></button>
+                  <svg class="art" viewBox="0 0 200 170" aria-hidden="true">
+                    <ellipse cx="100" cy="150" rx="84" ry="10" fill="#16301B" opacity=".08"/>
+                    <path d="M14 108c0-34 38-56 86-56s86 22 86 56c0 22-38 40-86 40s-86-18-86-40z" fill="#4A8F24"/>
+                    <path d="M20 106c0-28 36-46 80-46s80 18 80 46c0 12-10 20-24 24" fill="none" stroke="#60B232" stroke-width="10" stroke-linecap="round"/>
+                    <ellipse cx="100" cy="112" rx="62" ry="24" fill="#F6EFDD"/>
+                    <ellipse cx="100" cy="116" rx="52" ry="17" fill="#EFE4CA"/>
+                    <path d="M62 104c8-10 22-14 34-10" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" opacity=".7"/>
+                    <use href="#i-paw" x="116" y="104" width="16" height="16" fill="#EA691C" opacity=".6"/>
+                  </svg>
+                </div>
+                <div class="product__body">
+                  <span class="product__cat">Conforto</span>
+                  <h3>Caminha Pet</h3>
+                  <p class="product__meta">Capa removível e lavável · M</p>
+                  <div class="product__foot">
+                    <p class="price"><small>R$</small>149,90</p>
+                    <button class="add-btn" type="button" data-add aria-label="Adicionar Caminha Pet à sacola"><i data-lucide="plus"></i><span class="add-btn__txt">Adicionar</span></button>
+                  </div>
+                </div>
+              </article>
+
+              <article class="product">
+                <div class="product__media t-green">
+                  <button class="fav" type="button" aria-pressed="false" aria-label="Favoritar Shampoo Pet Care"><svg viewBox="0 0 24 24" stroke-linejoin="round"><path d="M12 20.3s-7.8-4.6-9.2-9.6C1.9 7.2 4 4 7.4 4c2 0 3.4 1.1 4.6 2.7C13.2 5.1 14.6 4 16.6 4 20 4 22.1 7.2 21.2 10.7c-1.4 5-9.2 9.6-9.2 9.6z"/></svg></button>
+                  <svg class="art" viewBox="0 0 200 170" aria-hidden="true">
+                    <ellipse cx="100" cy="158" rx="46" ry="7" fill="#16301B" opacity=".08"/>
+                    <path d="M88 18h30v8h-12v10h-10z" fill="#16301B" opacity=".8"/>
+                    <rect x="90" y="34" width="20" height="16" rx="3" fill="#EA691C"/>
+                    <path d="M70 62a14 14 0 0 1 14-14h32a14 14 0 0 1 14 14v80a14 14 0 0 1-14 14H84a14 14 0 0 1-14-14z" fill="#FFFBF4" stroke="#16301B" stroke-opacity=".12" stroke-width="2"/>
+                    <rect x="80" y="80" width="40" height="52" rx="8" fill="#60B232"/>
+                    <path d="M100 90c-6 8-9 12-9 17a9 9 0 0 0 18 0c0-5-3-9-9-17z" fill="#fff"/>
+                    <rect x="88" y="122" width="24" height="3.5" rx="1.75" fill="#fff" opacity=".8"/>
+                    <path d="M78 64v70" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".7"/>
+                    <circle cx="146" cy="64" r="10" fill="#fff" opacity=".8"/><circle cx="160" cy="46" r="6" fill="#fff" opacity=".7"/><circle cx="52" cy="92" r="7" fill="#fff" opacity=".7"/><circle cx="44" cy="72" r="4" fill="#fff" opacity=".6"/>
+                  </svg>
+                </div>
+                <div class="product__body">
+                  <span class="product__cat">Higiene</span>
+                  <h3>Shampoo Pet Care</h3>
+                  <p class="product__meta">Pele sensível · 500 ml</p>
+                  <div class="product__foot">
+                    <p class="price"><small>R$</small>34,90</p>
+                    <button class="add-btn" type="button" data-add aria-label="Adicionar Shampoo Pet Care à sacola"><i data-lucide="plus"></i><span class="add-btn__txt">Adicionar</span></button>
+                  </div>
+                </div>
+              </article>
+
+            </div>
+          </div>
+          <p class="products__note"><i data-lucide="info"></i> Preços ilustrativos. Consulte disponibilidade na loja ou pelo WhatsApp.</p>
+        </div>
+      </section>
+    </div>
+
+    <!-- ===================== DELIVERY ===================== -->
+    <section class="delivery" id="delivery" aria-labelledby="deliv-title">
+      <div class="container delivery__grid">
+        <div class="delivery__visual reveal">
+          <div class="delivery__photo ph">
+            <img src="assets/delivery-carro.jpg" alt="Carro de entregas da Iguana Pet Shop, adesivado em verde e branco" loading="lazy" style="object-position: 40% 55%">
+          </div>
+          <div class="delivery__pet ph">
+            <img src="assets/delivery-bulldog.jpg" alt="Buldogue francês saindo de uma caixa de entrega" loading="lazy">
+          </div>
+          <span class="tag delivery__tag"><svg class="ic"><use href="#i-paw"/></svg> Entrega no mesmo dia</span>
+        </div>
+        <div>
+          <span class="eyebrow reveal"><svg class="ic"><use href="#i-paw"/></svg> Delivery</span>
+          <h2 id="deliv-title" class="reveal" style="--d:60ms">Vamos nos programar nos <span class="italic-accent">pedidos de delivery?</span></h2>
+          <p class="delivery__lead reveal" style="--d:120ms">Tá a fim de fazer aquele pedido no nosso pet shop no conforto da sua casa? Então, fique ligado no horário das nossas entregas.</p>
+          <ol class="timeline reveal" style="--d:180ms">
+            <li>
+              <span class="timeline__time">08h30 – 11h</span>
+              <p>Pedidos feitos das 08h30 até as 11h serão entregues <strong>até as 12h</strong>.</p>
+            </li>
+            <li>
+              <span class="timeline__time">Após as 11h</span>
+              <p>Pedidos feitos após as 11h serão entregues <strong>depois das 14h</strong>.</p>
+            </li>
+            <li class="timeline__last">
+              <span class="timeline__time">Até as 18h</span>
+              <p><strong>Lembre-se:</strong> para entregas no mesmo dia, os pedidos devem ser feitos até as 18h.</p>
+            </li>
+          </ol>
+          <div class="reveal" style="--d:240ms">
+            <a class="btn btn--lg" data-wa="main" data-wa-msg="delivery" href="https://wa.me/5541988951022" target="_blank" rel="noopener"><svg class="ic"><use href="#i-whatsapp"/></svg> Fazer pedido pelo WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== BANHO & TOSA ===================== -->
+    <section class="grooming" id="banho-tosa" aria-labelledby="groom-title">
+      <div class="container grooming__grid">
+        <div class="grooming__visual reveal">
+          <div class="grooming__back" aria-hidden="true"></div>
+          <div class="grooming__photo ph">
+            <video class="loop-video" src="assets/video-tosa.mp4" poster="assets/poster-tosa.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Lulu da Pomerânia recebendo tosa com tesoura e pente" style="object-position: 30% 50%"></video>
+          </div>
+          <span class="tag grooming__tag"><svg class="ic"><use href="#i-paw"/></svg> Com horário marcado</span>
+          <div class="grooming__card">
+            <span class="grooming__thumb ph"><img src="assets/cliente-banho-tosa.jpg" alt="Cliente da Iguana de bandana após o banho e tosa" loading="lazy" style="object-position: 50% 45%"></span>
+            <p><strong>Volta cheiroso e tranquilo</strong>Atenção do começo ao fim do atendimento.</p>
+          </div>
+        </div>
+
+        <div class="grooming__copy">
+          <span class="eyebrow reveal"><svg class="ic"><use href="#i-paw"/></svg> Banho &amp; Tosa</span>
+          <h2 id="groom-title" class="reveal" style="--d:60ms">Banho &amp; Tosa com <span class="italic-accent">carinho de verdade.</span></h2>
+          <p class="grooming__text reveal" style="--d:120ms">Sabemos que confiar seu pet a alguém exige segurança. Aqui, cada bichinho recebe atenção, cuidado e muito carinho durante todo o atendimento.</p>
+          <ul class="checklist reveal" style="--d:180ms">
+            <li><i><i data-lucide="check"></i></i>Banho</li>
+            <li><i><i data-lucide="check"></i></i>Tosa</li>
+            <li><i><i data-lucide="check"></i></i>Tosa higiênica</li>
+            <li><i><i data-lucide="check"></i></i>Cuidados personalizados</li>
+            <li><i><i data-lucide="check"></i></i>Atendimento com horário marcado</li>
+          </ul>
+          <div class="grooming__cta reveal" style="--d:240ms">
+            <a class="btn btn--lg" data-wa="main" data-wa-msg="banho" href="https://wa.me/5541988951022" target="_blank" rel="noopener"><svg class="ic"><use href="#i-whatsapp"/></svg> Agendar pelo WhatsApp</a>
+            <p class="grooming__phone"><strong>(41) 98895-1022</strong>Vila Izabel · Curitiba</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONFIANÇA ===================== -->
+    <section class="trust" aria-labelledby="trust-title">
+      <div class="container">
+        <div class="trust__box reveal">
+          <div>
+            <p class="trust__score"><b>4,9</b><span>/ 5</span></p>
+            <p class="trust__meta">
+              <span class="stars" aria-label="5 estrelas"><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg></span>
+              315 avaliações no Google
+            </p>
+          </div>
+          <div class="trust__mid">
+            <h2 id="trust-title">Seu pet em boas mãos.</h2>
+            <p>Carinho que os tutores percebem.</p>
+          </div>
+          <div class="pet-cluster" aria-hidden="true">
+            <span class="ph"><img src="assets/av-3.jpg" alt="" loading="lazy"></span>
+            <span class="ph"><img src="assets/av-2.jpg" alt="" loading="lazy"></span>
+            <span class="ph"><img src="assets/av-1.jpg" alt="" loading="lazy"></span>
+            <span class="ph"><img src="assets/av-4.jpg" alt="" loading="lazy"></span>
+            <span class="ph"><img src="assets/logo-iguana.png" alt="" loading="lazy"></span>
+            <span class="pet-cluster__heart"><svg class="ic" viewBox="0 0 24 24"><path d="M12 20.3s-7.8-4.6-9.2-9.6C1.9 7.2 4 4 7.4 4c2 0 3.4 1.1 4.6 2.7C13.2 5.1 14.6 4 16.6 4 20 4 22.1 7.2 21.2 10.7c-1.4 5-9.2 9.6-9.2 9.6z"/></svg></span>
+          </div>
+          <svg class="trust__paws" aria-hidden="true" fill="currentColor"><use href="#i-paws-trail"/></svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== AVALIAÇÕES ===================== -->
+    <div>
+      <svg class="wave" viewBox="0 0 1440 48" preserveAspectRatio="none" aria-hidden="true"><path d="M0 48V20C220 40 420 44 700 26S1180 0 1440 18v30z" fill="currentColor"/></svg>
+      <section class="reviews" id="avaliacoes" aria-labelledby="rev-title">
+        <div class="container">
+          <div class="section-head section-head--row reveal">
+            <div>
+              <span class="eyebrow"><svg class="ic"><use href="#i-paw"/></svg> Avaliações</span>
+              <h2 id="rev-title">Quem conhece, <span class="italic-accent">recomenda.</span></h2>
+            </div>
+            <div class="carousel__nav" data-carousel-nav="rev">
+              <button class="carousel__btn" type="button" data-prev aria-label="Avaliações anteriores"><i data-lucide="chevron-left"></i></button>
+              <button class="carousel__btn" type="button" data-next aria-label="Próximas avaliações"><i data-lucide="chevron-right"></i></button>
+            </div>
+          </div>
+
+          <div class="carousel" data-carousel="rev">
+            <div class="carousel__track" data-track>
+              <article class="review review--green">
+                <span class="review__quote" aria-hidden="true">“</span>
+                <span class="stars" aria-label="5 estrelas"><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg></span>
+                <blockquote>Amo demais esse pet shop. É o único lugar que confio para levar minha cachorrinha para tomar banho. Ela volta impecável!</blockquote>
+                <footer><span class="review__avatar">LF</span><span><span class="review__name">Lívia Figueiredo</span><br><span class="review__src">Avaliação no Google</span></span></footer>
+              </article>
+              <article class="review review--outline">
+                <span class="review__quote" aria-hidden="true">“</span>
+                <span class="stars" aria-label="5 estrelas"><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg></span>
+                <blockquote>Todos são muito gentis e atenciosos. Meu cãozinho Zeus normalmente fica estressado nesses ambientes e saiu super tranquilo.</blockquote>
+                <footer><span class="review__avatar">JS</span><span><span class="review__name">Janaina Silva</span><br><span class="review__src">Avaliação no Google</span></span></footer>
+              </article>
+              <article class="review review--cream review--tilt">
+                <span class="review__quote" aria-hidden="true">“</span>
+                <span class="stars" aria-label="5 estrelas"><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg></span>
+                <blockquote>Muita variedade, preço justo, entrega rápida e atendimento excelente tanto presencial quanto pelo WhatsApp.</blockquote>
+                <footer><span class="review__avatar">TM</span><span><span class="review__name">Thais Schuster Maia</span><br><span class="review__src">Avaliação no Google</span></span></footer>
+              </article>
+              <article class="review">
+                <span class="review__quote" aria-hidden="true">“</span>
+                <span class="stars" aria-label="5 estrelas"><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg></span>
+                <blockquote>Banho e tosa higiênica excelentes. Muito cuidado com os bichinhos e uma grande variedade de produtos.</blockquote>
+                <footer><span class="review__avatar">AC</span><span><span class="review__name">Anna Elza C. A. Camargo</span><br><span class="review__src">Avaliação no Google</span></span></footer>
+              </article>
+            </div>
+          </div>
+
+          <div class="reviews__bottom">
+            <div class="dots" data-dots="rev" aria-label="Navegação das avaliações"></div>
+            <a class="reviews__all" href="https://www.google.com/maps/search/?api=1&amp;query=Iguana%20Emp%C3%B3rio%20Pet%20Curitiba" target="_blank" rel="noopener">Ver no Google <i data-lucide="arrow-up-right"></i></a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ===================== CASHBACK ===================== -->
+    <section class="cashback" aria-labelledby="cash-title">
+      <div class="container">
+        <div class="cashback__box reveal">
+          <div>
+            <span class="eyebrow"><svg class="ic"><use href="#i-paw"/></svg> Programa de cashback</span>
+            <h2 id="cash-title">Comprou. Cuidou. Ganhou.</h2>
+            <p>Pergunte sobre nosso programa de cashback — um jeito a mais de cuidar de quem você ama.</p>
+            <a class="btn btn--light btn--lg" data-wa="main" data-wa-msg="cashback" href="https://wa.me/5541988951022" target="_blank" rel="noopener">Quero saber mais <i data-lucide="arrow-right"></i></a>
+          </div>
+          <div class="cashback__art" aria-hidden="true">
+            <!-- plaquinha de coleira -->
+            <svg viewBox="0 0 220 250">
+              <circle cx="110" cy="22" r="16" fill="none" stroke="#FFE3CC" stroke-width="7"/>
+              <rect x="101" y="36" width="18" height="18" rx="4" fill="#FFE3CC"/>
+              <path d="M110 52c-54 0-92 38-92 92s38 96 92 96 92-42 92-96-38-92-92-92z" fill="#FFFBF4"/>
+              <path d="M110 66c-46 0-78 32-78 78s32 82 78 82 78-36 78-82-32-78-78-78z" fill="none" stroke="#EA691C" stroke-opacity=".25" stroke-width="3" stroke-dasharray="6 7"/>
+              <text x="110" y="148" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="58" font-weight="700" fill="#16301B">R$</text>
+              <text x="110" y="184" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="15" font-weight="800" letter-spacing="3" fill="#EA691C">DE VOLTA</text>
+              <use href="#i-paw" x="98" y="194" width="24" height="24" fill="#60B232"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== BANNER PROMOCIONAL ===================== -->
+    <section class="promo" aria-labelledby="promo-title">
+      <div class="container">
+        <div class="promo__box reveal">
+          <div class="promo__content">
+            <span class="eyebrow"><svg class="ic"><use href="#i-paw"/></svg> Um agrado hoje</span>
+            <h2 id="promo-title">Seu pet merece um <em>mimo</em> hoje.</h2>
+            <p>Passe na Iguana Empório Pet e encontre aquele agrado que faz o rabinho balançar.</p>
+            <a class="btn btn--lg" href="#favoritos">Ver produtos <svg class="ic paw-step"><use href="#i-paw"/></svg></a>
+          </div>
+          <div class="promo__visual">
+            <div class="promo__blob-o" aria-hidden="true"></div>
+            <div class="promo__blob-g" aria-hidden="true"></div>
+            <div class="promo__photo ph">
+              <img src="assets/cliente-shihtzu-chocolate.jpg" alt="Shih-tzu chocolate de lacinhos, todo arrumado após o banho" loading="lazy" style="object-position: 50% 40%">
+            </div>
+            <div class="promo__tags" aria-hidden="true">
+              <span class="tag">Petiscos</span>
+              <span class="tag">Brinquedos</span>
+              <span class="tag">Caminhas</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SOBRE ===================== -->
+    <section class="about" id="sobre" aria-labelledby="about-title">
+      <div class="container about__grid">
+        <div class="about__visual reveal">
+          <div class="about__photo ph">
+            <img src="assets/loja-interior.jpg" alt="Interior da Iguana Empório Pet, com parede verde, mezanino e gôndolas cheias de produtos" loading="lazy" style="object-position: 38% 50%">
+          </div>
+          <div class="about__stat"><b>2</b><span>lojas em Curitiba</span></div>
+          <svg class="about__leaf" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-leaf"/></svg>
+        </div>
+        <div>
+          <span class="eyebrow reveal"><svg class="ic"><use href="#i-paw"/></svg> Sobre a Iguana</span>
+          <h2 id="about-title" class="reveal" style="--d:60ms">Mais que um <span class="italic-accent">pet shop.</span></h2>
+          <div class="about__text reveal" style="--d:120ms">
+            <p>A Iguana Empório Pet é um comércio local de Curitiba feito por quem entende que pets fazem parte da família.</p>
+            <p>Aqui você encontra variedade de produtos, atendimento próximo e serviços realizados com cuidado e carinho.</p>
+          </div>
+          <ul class="pills reveal" style="--d:180ms">
+            <li class="pill"><b>+</b> variedade</li>
+            <li class="pill"><b>+</b> atendimento próximo</li>
+            <li class="pill"><b>+</b> entrega</li>
+            <li class="pill"><b>+</b> banho &amp; tosa</li>
+            <li class="pill"><b>+</b> preços justos</li>
+          </ul>
+          <div class="about__sign reveal" style="--d:240ms">
+            <i><i data-lucide="heart-handshake"></i></i>
+            <p>Empresa liderada por empreendedoras.<small>Um negócio de bairro, feito com dedicação todos os dias.</small></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FACILIDADES ===================== -->
+    <div>
+      <svg class="wave" viewBox="0 0 1440 48" preserveAspectRatio="none" aria-hidden="true"><path d="M0 48V28C260 4 520 2 760 18s440 30 680 8v22z" fill="currentColor"/></svg>
+      <section class="ease-sec" aria-labelledby="ease-title">
+        <div class="container">
+          <div class="section-head reveal">
+            <span class="eyebrow"><svg class="ic"><use href="#i-paw"/></svg> Facilidades</span>
+            <h2 id="ease-title">Pensado para <span class="italic-accent">você</span> também.</h2>
+          </div>
+          <ul class="ease-grid">
+            <li class="ease-item reveal"><i><i data-lucide="truck"></i></i><div><h3>Entrega</h3><p>Receba em casa</p></div></li>
+            <li class="ease-item reveal" style="--d:50ms"><i><i data-lucide="store"></i></i><div><h3>Retirada na loja</h3><p>Compre e busque</p></div></li>
+            <li class="ease-item reveal" style="--d:100ms"><i><i data-lucide="wifi"></i></i><div><h3>Wi-Fi gratuito</h3><p>Enquanto você espera</p></div></li>
+            <li class="ease-item reveal" style="--d:150ms"><i><i data-lucide="square-parking"></i></i><div><h3>Estacionamento gratuito</h3><p>Chegue sem preocupação</p></div></li>
+            <li class="ease-item reveal" style="--d:200ms"><i><i data-lucide="credit-card"></i></i><div><h3>Cartões</h3><p>Crédito e débito</p></div></li>
+            <li class="ease-item reveal" style="--d:250ms"><i><i data-lucide="nfc"></i></i><div><h3>Aproximação</h3><p>Pague só encostando</p></div></li>
+            <li class="ease-item ease-item--wide reveal" style="--d:300ms"><i><i data-lucide="accessibility"></i></i><div><h3>Acessibilidade</h3><p>Entrada, banheiro, estacionamento e assentos acessíveis.</p></div></li>
+          </ul>
+        </div>
+      </section>
+      <svg class="wave wave--flip" viewBox="0 0 1440 48" preserveAspectRatio="none" aria-hidden="true"><path d="M0 48V22C300 40 560 42 800 24s420-26 640-6v30z" fill="currentColor"/></svg>
+    </div>
+
+    <!-- ===================== LOJAS ===================== -->
+    <section class="stores" id="lojas" aria-labelledby="stores-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow"><svg class="ic"><use href="#i-paw"/></svg> Nossas lojas</span>
+          <h2 id="stores-title">Encontre a Iguana mais <span class="italic-accent">perto de você.</span></h2>
+        </div>
+
+        <div class="stores__grid">
+          <article class="store reveal">
+            <div class="store__map store__map--photo ph">
+              <img src="assets/loja-fachada.jpg" alt="Fachada da Iguana Empório Pet na Vila Izabel, com estacionamento em frente" loading="lazy" style="object-position: 50% 40%">
+            </div>
+            <div class="store__body">
+              <span class="store__kicker">Loja</span>
+              <h3>Vila Izabel</h3>
+              <ul class="store__info">
+                <li><i data-lucide="map-pin"></i><span>R. Prof. Sebastião Paraná, 125<br>Vila Izabel · Curitiba - PR · 80320-070</span></li>
+                <li><i data-lucide="phone"></i><a href="tel:+554135245816">(41) 3524-5816</a></li>
+                <li><svg class="ic" style="width:19px;height:19px;margin-top:2px;color:var(--green-ink)"><use href="#i-whatsapp"/></svg><a data-wa="main" href="https://wa.me/5541988951022" target="_blank" rel="noopener">(41) 98895-1022</a></li>
+              </ul>
+              <div class="store__btns">
+                <a class="btn btn--ghost" href="https://www.google.com/maps/search/?api=1&amp;query=R.%20Prof.%20Sebasti%C3%A3o%20Paran%C3%A1%2C%20125%20-%20Vila%20Izabel%2C%20Curitiba%20-%20PR%2C%2080320-070" target="_blank" rel="noopener"><i data-lucide="navigation"></i> Como chegar</a>
+                <a class="btn" data-wa="main" href="https://wa.me/5541988951022" target="_blank" rel="noopener"><svg class="ic"><use href="#i-whatsapp"/></svg> WhatsApp</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="store store--b reveal" style="--d:100ms">
+            <div class="store__map store__map--photo ph">
+              <img src="assets/loja-cajuru.jpg" alt="Fachada da Iguana Empório Pet no Cajuru, com a parede verde de patinhas e o logotipo" loading="lazy" style="object-position: 62% 45%">
+            </div>
+            <div class="store__body">
+              <span class="store__kicker">Loja</span>
+              <h3>Cajuru</h3>
+              <ul class="store__info">
+                <li><i data-lucide="map-pin"></i><span>R. Eng. Benedito Mário da Silva, 154<br>Cajuru · Curitiba - PR</span></li>
+                <li><i data-lucide="phone"></i><a href="tel:+554132265214">(41) 3226-5214</a></li>
+                <li><svg class="ic" style="width:19px;height:19px;margin-top:2px;color:var(--green-ink)"><use href="#i-whatsapp"/></svg><a data-wa="cajuru" href="https://wa.me/5541992115214" target="_blank" rel="noopener">(41) 99211-5214</a></li>
+              </ul>
+              <div class="store__btns">
+                <a class="btn btn--ghost" href="https://www.google.com/maps/search/?api=1&amp;query=R.%20Eng.%20Benedito%20M%C3%A1rio%20da%20Silva%2C%20154%20-%20Cajuru%2C%20Curitiba%20-%20PR" target="_blank" rel="noopener"><i data-lucide="navigation"></i> Como chegar</a>
+                <a class="btn" data-wa="cajuru" href="https://wa.me/5541992115214" target="_blank" rel="noopener"><svg class="ic"><use href="#i-whatsapp"/></svg> WhatsApp</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CTA FINAL ===================== -->
+    <section class="final" aria-labelledby="final-title">
+      <div class="container">
+        <div class="final__box reveal">
+          <div class="ph">
+            <video class="loop-video" src="assets/video-shampoo.mp4" poster="assets/poster-shampoo.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Golden retriever de olhos fechados recebendo massagem com shampoo"></video>
+          </div>
+          <div class="final__content">
+            <h2 id="final-title">Eles fazem parte da família. <em>Cuide deles como família.</em></h2>
+            <p>Venha conhecer a Iguana Empório Pet.</p>
+            <div class="final__ctas">
+              <a class="btn btn--lg" data-wa="main" href="https://wa.me/5541988951022" target="_blank" rel="noopener"><svg class="ic"><use href="#i-whatsapp"/></svg> Falar no WhatsApp</a>
+              <a class="btn btn--lg btn--ghost" href="#lojas"><i data-lucide="map-pin"></i> Encontrar uma loja</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <svg class="footer__paws" aria-hidden="true" fill="currentColor"><use href="#i-paws-trail"/></svg>
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <a href="#inicio" class="brand" aria-label="Iguana Empório Pet — voltar ao topo">
+            <img class="brand__img" src="assets/logo-iguana.png" alt="Iguana Empório Pet" onerror="this.remove()">
+            <span class="brand__fallback" hidden>
+              <span class="brand__mark"><svg class="ic"><use href="#i-paw"/></svg></span>
+              <span class="brand__words"><span class="brand__name">Iguana</span><span class="brand__sub">EMPÓRIO PET</span></span>
+            </span>
+          </a>
+          <p class="footer__tagline">Carinho para quem faz parte da família.</p>
+        </div>
+        <div>
+          <h4>Navegação</h4>
+          <ul class="footer__links">
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#favoritos">Produtos</a></li>
+            <li><a href="#banho-tosa">Banho &amp; Tosa</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#lojas">Contato</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Vila Izabel</h4>
+          <address class="footer__addr" style="font-style:normal">
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=R.%20Prof.%20Sebasti%C3%A3o%20Paran%C3%A1%2C%20125%20-%20Vila%20Izabel%2C%20Curitiba%20-%20PR%2C%2080320-070" target="_blank" rel="noopener">R. Prof. Sebastião Paraná, 125</a>
+            <a href="tel:+554135245816">(41) 3524-5816</a>
+          </address>
+        </div>
+        <div>
+          <h4>Redes sociais</h4>
+          <div class="socials">
+            <a href="https://www.instagram.com/iguanapetshopoficial/" target="_blank" rel="noopener" aria-label="Instagram da Iguana Empório Pet"><svg class="ic" style="fill:none"><use href="#i-insta"/></svg></a>
+            <a data-wa="main" href="https://wa.me/5541988951022" target="_blank" rel="noopener" aria-label="WhatsApp da Iguana Empório Pet"><svg class="ic"><use href="#i-whatsapp"/></svg></a>
+          </div>
+          <p class="footer__handle">@iguanapetshopoficial</p>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© Iguana Empório Pet · Curitiba – Paraná</p>
+        <p class="footer__demo">Protótipo demonstrativo</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp flutuante -->
+  <a class="wa-float" data-wa="main" href="https://wa.me/5541988951022" target="_blank" rel="noopener" aria-label="Fale com a Iguana pelo WhatsApp">
+    <svg class="ic"><use href="#i-whatsapp"/></svg><span class="wa-float__label">Fale com a Iguana</span>
+  </a>
+
+  <!-- Notificação -->
+  <div class="toast" role="status" aria-live="polite" data-toast>
+    <i><svg class="ic"><use href="#i-paw"/></svg></i><span data-toast-text>Produto adicionado à sacola</span>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+  <script>
+    (function () {
+      'use strict';
+
+      /* ---------- Ícones ---------- */
+      if (window.lucide) lucide.createIcons({ attrs: { 'stroke-width': 1.8 } });
+
+      var root = document.documentElement;
+      var $ = function (s, c) { return (c || document).querySelector(s); };
+      var $$ = function (s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
+
+      /* ---------- WhatsApp ---------- */
+      var WA_NUMBERS = { main: '5541988951022', cajuru: '5541992115214' };
+      var WA_MESSAGES = {
+        default: 'Olá! Vim pelo site da Iguana Empório Pet e gostaria de mais informações.',
+        banho: 'Olá! Vim pelo site da Iguana Empório Pet e gostaria de saber mais sobre o banho e tosa.',
+        cashback: 'Olá! Vim pelo site da Iguana Empório Pet e gostaria de saber mais sobre o programa de cashback.',
+        delivery: 'Olá! Vim pelo site da Iguana Empório Pet e gostaria de fazer um pedido para entrega.'
+      };
+
+      /* ---------- Vídeos em loop (sem som, tocam sozinhos; pausam fora da tela) ---------- */
+      var videos = $$('video.loop-video');
+      var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      videos.forEach(function (v) {
+        v.muted = true;
+        v.setAttribute('muted', '');
+        if (reduceMotion) { v.removeAttribute('autoplay'); v.pause(); }
+      });
+      if (!reduceMotion && 'IntersectionObserver' in window) {
+        var vio = new IntersectionObserver(function (entries) {
+          entries.forEach(function (en) {
+            var v = en.target;
+            if (en.isIntersecting) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+            else v.pause();
+          });
+        }, { threshold: .15 });
+        videos.forEach(function (v) { vio.observe(v); });
+      }
+      $$('[data-wa]').forEach(function (a) {
+        var num = WA_NUMBERS[a.dataset.wa] || WA_NUMBERS.main;
+        var msg = WA_MESSAGES[a.dataset.waMsg] || WA_MESSAGES.default;
+        a.href = 'https://wa.me/' + num + '?text=' + encodeURIComponent(msg);
+      });
+
+      /* ---------- Tema claro / escuro ---------- */
+      var themeBtns = $$('[data-theme-toggle]');
+      var metaTheme = $('meta[name="theme-color"]');
+      function setTheme(t, animate) {
+        if (animate) {
+          root.classList.add('theme-anim');
+          clearTimeout(setTheme._t);
+          setTheme._t = setTimeout(function () { root.classList.remove('theme-anim'); }, 550);
+        }
+        root.setAttribute('data-theme', t);
+        themeBtns.forEach(function (b) {
+          b.setAttribute('aria-checked', t === 'dark' ? 'true' : 'false');
+          b.setAttribute('aria-label', t === 'dark' ? 'Ativar modo claro' : 'Ativar modo escuro');
+        });
+        if (metaTheme) metaTheme.setAttribute('content', t === 'dark' ? '#0D1510' : '#FBF8F1');
+      }
+      setTheme(root.getAttribute('data-theme') || 'light', false);
+      themeBtns.forEach(function (b) {
+        b.addEventListener('click', function () {
+          var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+          setTheme(next, true);
+          try { localStorage.setItem('iguana-theme', next); } catch (e) {}
+        });
+      });
+
+      /* ---------- Header ao rolar ---------- */
+      var header = $('.site-header');
+      var onScroll = function () { header.classList.toggle('is-scrolled', window.scrollY > 24); };
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+
+      /* ---------- Menu mobile ---------- */
+      var burger = $('[data-burger]');
+      var mnav = $('#menu-mobile');
+      function toggleMenu(open) {
+        var isOpen = typeof open === 'boolean' ? open : !mnav.classList.contains('is-open');
+        mnav.classList.toggle('is-open', isOpen);
+        mnav.setAttribute('aria-hidden', String(!isOpen));
+        burger.setAttribute('aria-expanded', String(isOpen));
+        burger.setAttribute('aria-label', isOpen ? 'Fechar menu' : 'Abrir menu');
+        document.body.classList.toggle('menu-open', isOpen);
+      }
+      burger.addEventListener('click', function () { toggleMenu(); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && mnav.classList.contains('is-open')) toggleMenu(false); });
+      window.addEventListener('resize', function () { if (window.innerWidth > 1024 && mnav.classList.contains('is-open')) toggleMenu(false); });
+
+      /* ---------- Rolagem suave ---------- */
+      $$('a[href^="#"]').forEach(function (a) {
+        a.addEventListener('click', function (e) {
+          var id = a.getAttribute('href');
+          if (id.length < 2) return;
+          var target = document.querySelector(id);
+          if (!target) return;
+          e.preventDefault();
+          if (mnav.classList.contains('is-open')) toggleMenu(false);
+          var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+          var offset = id === '#inicio' ? 0 : target.getBoundingClientRect().top + window.scrollY - (window.innerWidth <= 640 ? 84 : 96);
+          window.scrollTo({ top: offset, behavior: reduce ? 'auto' : 'smooth' });
+          history.replaceState(null, '', id);
+        });
+      });
+
+      /* ---------- Link ativo no menu ---------- */
+      var navLinks = $$('.nav__link');
+      if ('IntersectionObserver' in window) {
+        var spy = new IntersectionObserver(function (entries) {
+          entries.forEach(function (en) {
+            if (!en.isIntersecting) return;
+            navLinks.forEach(function (l) { l.classList.toggle('is-active', l.getAttribute('href') === '#' + en.target.id); });
+          });
+        }, { rootMargin: '-45% 0px -50% 0px' });
+        ['inicio', 'loja', 'banho-tosa', 'sobre', 'avaliacoes', 'lojas'].forEach(function (id) { var el = document.getElementById(id); if (el) spy.observe(el); });
+      }
+
+      /* ---------- Sacola + notificação ---------- */
+      var cartCount = 0;
+      var countEl = $('[data-cart-count]');
+      var cartBtn = $('[data-cart-btn]');
+      var toast = $('[data-toast]');
+      var toastText = $('[data-toast-text]');
+      var toastTimer;
+      function showToast(msg) {
+        toastText.textContent = msg;
+        toast.classList.add('show');
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(function () { toast.classList.remove('show'); }, 2400);
+      }
+      $$('[data-add]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          cartCount++;
+          countEl.textContent = cartCount;
+          countEl.classList.add('has-items');
+          countEl.classList.remove('bump'); void countEl.offsetWidth; countEl.classList.add('bump');
+          cartBtn.setAttribute('aria-label', 'Sacola: ' + cartCount + (cartCount === 1 ? ' item' : ' itens'));
+          btn.classList.add('added');
+          setTimeout(function () { btn.classList.remove('added'); }, 900);
+          showToast('Produto adicionado à sacola');
+        });
+      });
+      cartBtn.addEventListener('click', function () {
+        showToast(cartCount ? 'Você tem ' + cartCount + (cartCount === 1 ? ' item' : ' itens') + ' na sacola' : 'Sua sacola ainda está vazia');
+      });
+
+      /* ---------- Favoritos ---------- */
+      $$('.fav').forEach(function (b) {
+        b.addEventListener('click', function () {
+          var on = b.getAttribute('aria-pressed') !== 'true';
+          b.setAttribute('aria-pressed', String(on));
+          b.classList.remove('pop'); void b.offsetWidth; b.classList.add('pop');
+        });
+      });
+
+      /* ---------- Carrosséis ---------- */
+      $$('[data-carousel]').forEach(function (car) {
+        var name = car.dataset.carousel;
+        var track = $('[data-track]', car);
+        var nav = $('[data-carousel-nav="' + name + '"]');
+        var prev = nav && $('[data-prev]', nav);
+        var next = nav && $('[data-next]', nav);
+        var dotsWrap = $('[data-dots="' + name + '"]');
+        var items = Array.prototype.slice.call(track.children);
+
+        function step() {
+          var gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+          return items[0].getBoundingClientRect().width + gap;
+        }
+        function update() {
+          var max = track.scrollWidth - track.clientWidth - 2;
+          if (prev) prev.disabled = track.scrollLeft <= 2;
+          if (next) next.disabled = track.scrollLeft >= max;
+          if (dotsWrap) {
+            var idx = Math.round(track.scrollLeft / step());
+            if (track.scrollLeft >= max) idx = items.length - 1;
+            $$('button', dotsWrap).forEach(function (d, i) { d.classList.toggle('is-active', i === idx); });
+          }
+        }
+        if (prev) prev.addEventListener('click', function () { track.scrollBy({ left: -step(), behavior: 'smooth' }); });
+        if (next) next.addEventListener('click', function () { track.scrollBy({ left: step(), behavior: 'smooth' }); });
+        if (dotsWrap) {
+          items.forEach(function (_, i) {
+            var d = document.createElement('button');
+            d.type = 'button';
+            d.setAttribute('aria-label', 'Ir para avaliação ' + (i + 1));
+            d.addEventListener('click', function () { track.scrollTo({ left: step() * i, behavior: 'smooth' }); });
+            dotsWrap.appendChild(d);
+          });
+        }
+        var raf;
+        track.addEventListener('scroll', function () { cancelAnimationFrame(raf); raf = requestAnimationFrame(update); }, { passive: true });
+        window.addEventListener('resize', update);
+        update();
+      });
+
+      /* ---------- Animações ao entrar na tela ---------- */
+      var reveals = $$('.reveal');
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (en) {
+            if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+          });
+        }, { threshold: .12, rootMargin: '0px 0px -40px 0px' });
+        reveals.forEach(function (el) { io.observe(el); });
+      } else {
+        reveals.forEach(function (el) { el.classList.add('in'); });
+      }
+    })();
+  </script>
+</body>
+</html>
