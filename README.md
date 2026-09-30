@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:040607,100:BF40FA&height=180&section=header&text=Iguana%20Emp%C3%B3rio%20Pet&fontSize=46&fontColor=ffffff&fontAlignY=38&desc=Site%20demonstrativo%20%E2%80%A2%20Pet%20shop%2C%20banho%20%26%20tosa&descAlignY=60&descSize=16" width="100%" alt="Iguana Empório Pet" />
+  <img src="banner.svg" width="100%" alt="Iguana Empório Pet" />
 </p>
 
 <p align="center">
@@ -90,5 +90,5 @@ git clone https://github.com/lorenzo-or7/iguana-emporio-pet-demo.git
 </p>
 
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:BF40FA,100:040607&height=100&section=footer" width="100%" />
+  <img src="footer.svg" width="100%" alt="" />
 </p>
